@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:34:36 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/20 16:58:12 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/11/21 19:29:46 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_last_word(char *str)
 	unsigned int	len;
 
 	len = 0;
-	// 1.count the length of the string
+	// 1. Start from the end by counting the length of the string
 	while (str[len])
 		len++;
 	// remove the '\0' to start from the last letter of the index
@@ -36,10 +36,10 @@ void	ft_last_word(char *str)
 	// 3.count the lenght of the word
 	while (ft_isblank(str[len]) == 0)
 		len--;
-	// len stopped in the space.
+	// len stopped in the next space (beggining of the word)
 	// I want to start printing after the space
 	len = len + 1;
-	// print the word
+	// print the word (while str not null, otherwise overflow if no spaces at the end)
 	while(ft_isblank(str[len]) == 0 && str[len])
 	{
 		write(1, &str[len], 1);
