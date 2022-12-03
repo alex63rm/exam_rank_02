@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp2.c                                       :+:      :+:    :+:   */
+/*   max2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 23:24:48 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/03 09:16:25 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/03 10:13:07 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/03 10:47:04 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
 #include<stdio.h>
 
-int	ft_strcmp(char *s1, char *s2)
+int	max(int* tab, unsigned int len)
 {
+	int max;
 	unsigned int i;
 
 	i = 0;
-	// always check until the null, otherwise it will overflow
-	while (s1[i] || s2[i])
+	max = 0;
+	while (i < len)
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
+		// compare one to another && if the number is bigger than the last found number
+		if (tab[i] > tab[i + 1] && tab[i] > max)
+			max = tab[i];
+		i++;
 	}
-	return (0);
-
+	return (max);
 }
 
 /* int	main(void)
 {
-	char s1[] = "Hell";
-	char s2[] = "Hello";
-	int ret1 = ft_strcmp(s1, s2);
-	printf("my is: %d\n", ret1);
-	int ret2 = strcmp(s1, s2);
-	printf("or is: %d\n", ret2);
+	int tab[5] = {100, 17, 2, 9, 600};
+	int len = 5;
+	int ret1 = max(tab, len);
+
+	printf("max is: %d\n", ret1);
 	return (0);
 } */
