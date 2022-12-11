@@ -6,17 +6,16 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:03:58 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/19 13:27:12 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/11 16:20:41 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 //#include <stdio.h>
 //#include <string.h>
 
 int	ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -35,5 +34,5 @@ int	ft_strlen(char *str)
 	j = strlen(array);
 	printf("or result: %i\n", j);
 	return (0);
-	
+
 } */

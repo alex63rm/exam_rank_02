@@ -6,9 +6,11 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 20:21:31 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/26 14:00:18 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/11 19:56:24 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include<stdio.h>
 
 int	ft_base(int c, int str_base)
 {
@@ -34,7 +36,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	unsigned int	i;
 	int				num;
 	int				sign;
-	
+
 	i = 0;
 	num = 0;
 	sign = 1;
@@ -50,9 +52,17 @@ int	ft_atoi_base(const char *str, int str_base)
 	// loop: while the number is inside the base (in normal atoi it was between 0 to 9)
 	while (ft_base(str[i], str_base) != 0)
 	{
-		num = num * str_base;
-		num = num + ft_base(str[i], str_base);
+		//same as atoi, but no - 48, it has its own base
+		num = num * str_base + ft_base(str[i], str_base);
 		i++;
 	}
 	return (num * sign);
 }
+
+/* int	main(void)
+{
+	int	ret1;
+	ret1 = ft_atoi_base("Ceci permet de decouvrir le fonctionnement de ton ft_atoi_base.", 16);
+	printf("%d\n", ret1);
+	return (0);
+} */
