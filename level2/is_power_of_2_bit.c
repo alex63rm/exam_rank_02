@@ -1,48 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print2.c                                       :+:      :+:    :+:   */
+/*   is_power_of_2_bit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 23:07:02 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/30 23:19:44 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/13 19:15:47 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/13 19:24:50 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include<stdio.h>
 
-int	ft_strlen(char *s)
+int	is_power_of_2(int n)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-void	ft_rev_print(char *str)
-{
-	int	len;
-
-	len = ft_strlen(str);
-	len = len - 1;
-	while (str[len] && len >= 0)
+	if (n == 0)
+		return (0);
+	if (n == 1)
+		return (1);
+	if (n >= 2)
 	{
-		write(1, &str[len], 1);
-		len--;
+		if ((n & (n - 1)) == 0)	// bitwise
+			return (1);
 	}
-	return ;
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-	{
-		ft_rev_print(argv[1]);
-	}
-	write (1, "\n", 1);
 	return (0);
 }
+
+/* int	main(void)
+{
+	int n = 20;
+	while (n > 0)
+	{
+		is_power_of_2(n);
+		printf ("n is %d ", n);
+		printf ("result is %d\n", is_power_of_2(n));
+		n--;
+	}
+	return (0);
+} */
