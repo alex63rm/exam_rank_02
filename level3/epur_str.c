@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 23:52:14 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/12 20:47:31 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/17 21:37:02 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ void	ft_epur_str(char *str)
 	wordcount = ft_wordcount(str);	//count the words to use it as a counter
 	while (wordcount)
 	{
-		// skip spaces
+		// loop spaces
 		while (str[i] && ft_isspace(str[i]) == 1)	// in all the loops put str[i] != '\0' otherwise we get overflow
 			i++;
-		// write if no spaces
+		// loop writing while no spaces
 		while (str[i] && ft_isspace(str[i]) == 0)
 		{
 			write(1, &str[i], 1);
 			i++;
 		}
 		// write spaces after writing the word (except in the last one)
-		if ((ft_isspace(str[i]) == 1) && (wordcount > 1))	// when there is only one word (last word), don't write a space after it
+		if (wordcount > 1)	// when there is only one word (last word), don't write a space after it
 			write(1, " ", 1);
 		wordcount--;
 	}
