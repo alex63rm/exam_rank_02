@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:49:46 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/03 17:46:37 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/18 21:28:27 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,29 +38,30 @@ void	ft_str_capitalizer(char *str)
 	int i = 0;
 	while (str[i])
 	{
-		// first case in case no spaces
-		if (i == 0)
+		if (i == 0)	// special case for first position. Convert it, write it, advance, restart loop
+		{
 			str[i] = ft_toupper(str[i]);
-		// check if first letter of word & convert
-		if (ft_isspace(str[i - 1]) == 1)
+			write(1, &str[i], 1);
+			i++;
+			continue ;
+		}
+		if (ft_isspace(str[i]) == 0 && (ft_isspace(str[i - 1]) == 1))	// check if first letter of word
 			str[i] = ft_toupper(str[i]);
-		// convert the rest to lower. Except in the first case!!
-		else if (i != 0)
-			str[i] = ft_tolower(str[i]);
-		write(1, &str[i], 1);
-	i++;
+		else
+			str[i] = ft_tolower(str[i]);	//else turn to lower
+		write(1, &str[i], 1);	// write the str[i] converted
+		i++;
 	}
-	// it has to write a "\n" after each argument
-	write (1, "\n", 1);
+	write(1, "\n", 1);
 }
+
 
 int	main(int argc, char **argv)
 {
 	if (argc > 1)
 	{
 		int i = 1;
-		// pass the arguments 1 by 1.
-		while (i < argc)
+		while (i < argc)	// pass the arguments 1 by 1.
 		{
 			ft_str_capitalizer(argv[i]);
 			i++;
@@ -70,3 +71,31 @@ int	main(int argc, char **argv)
 		write (1, "\n", 1);
 	return (0);
 }
+
+/* Assignment name  : str_capitalizer
+Expected files   : str_capitalizer.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes one or several strings and, for each argument,
+capitalizes the first character of each word (If it's a letter, obviously),
+puts the rest in lowercase, and displays the result on the standard output,
+followed by a \n.
+
+A "word" is defined as a part of a string delimited either by spaces/tabs, or
+by the start/end of the string. If a word only has one letter, it must be
+capitalized.
+
+If there are no arguments, the progam must display \n.
+
+Example:
+
+$> ./str_capitalizer | cat -e
+$
+$> ./str_capitalizer "Premier PETIT TesT" | cat -e
+Premier Petit Test$
+$> ./str_capitalizer "DeuxiEmE tEST uN PEU moinS  facile" "   attention C'EST pas dur QUAND mEmE" "ALLer UN DeRNier 0123456789pour LA rouTE    E " | cat -e
+Deuxieme Test Un Peu Moins  Facile$
+   Attention C'est Pas Dur Quand Meme$
+Aller Un Dernier 0123456789pour La Route    E $
+$> */
