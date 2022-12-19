@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 18:46:10 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/03 20:49:17 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/20 00:18:37 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 #include<stdio.h>
 #include<unistd.h>
 
-char *ft_write_nbr(char *ptr, int n_len, long nbr)
+char *ft_save_nbr(char *ptr, int n_len, long nbr)	// treat number as long to avoid the special case
 {
-
-	// a. if == 0 write a 0
-	// b. if < 0, write the sign and convert to - to enter the loop
+	// a. if == 0 save 0
+	// b. if < 0, save the sign and convert to - to enter the loop
 	// c. loop from the end, it is opposite, first write the number, then divid n = n / 10.
-
 
 	if (nbr == 0)
 		ptr[0] = '0';
@@ -40,17 +38,17 @@ char *ft_write_nbr(char *ptr, int n_len, long nbr)
 
 int	ft_int_len(long n)    // pass LONG to avoid the special case, to be able to add the '-'.
 {
-	// a. if n == 0
-	// b. if n < 0 advance and convert to enter loop
+	// a. if n == 0 advance 1
+	// b. if n < 0 advance 1 and convert to enter loop
 	// c. loop (n > base) to count the digits
 
-	int n_len = 0;  //**diff
+	int n_len = 0;
 	if (n == 0)
 		n_len++;
 	if (n < 0)
 	{
-		n = n * - 1; // important to put this one, to enter the loop and count correctly the n_len
 		n_len++;
+		n = n * - 1; // to enter the next loop and count correctly the n_len
 	}
 	while (n > 0)
 	{
@@ -66,21 +64,21 @@ char *ft_itoa(int nbr)
 	int		n_len;
 
 	n_len = ft_int_len(nbr);		// 1. calculate the len of number
-	ptr = (char *)malloc(sizeof(char) * n_len + 1);		// 2. malloc space
+	ptr = (char *)malloc(sizeof(char) * n_len + 1);		// 2. malloc space + 1 for '\0'
 	if (!ptr)
 		return (0);
-	ptr = ft_write_nbr(ptr, n_len, nbr); // 3. write the number in ptr
+	ptr = ft_save_nbr(ptr, n_len, nbr); // 3. write the number in ptr
 	ptr[n_len] = '\0'; // end it in null. This cannot go inside because if we put ptr[n_len] = 0, when n_len = 0, it returns no string.
 	return (ptr);
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char *ret;
-	int nbr = 21474; //-2147483648
+	int nbr = 500; //-2147483648
 
 	ret = ft_itoa(nbr);
 	printf("char nbr is: %s\n", ret);
 
 	return (0);
-} */
+}
