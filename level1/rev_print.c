@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print2.c                                       :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 23:07:02 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/13 22:41:57 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/19 20:33:31 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_rev_print(char *str)
 {
 	int	len;
 
-	len = ft_strlen(str);
+	len = ft_strlen(str);	// compute to start from the end
 	len = len - 1;		// start in - 1 strlen = 2 is str[0] and str[1]
 	while (len >= 0)	// start printing from the end
 	{
@@ -46,3 +46,23 @@ int	main(int argc, char **argv)
 	write (1, "\n", 1);
 	return (0);
 }
+
+/* Assignment name  : rev_print
+Expected files   : rev_print.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string, and displays the string in reverse
+followed by a newline.
+
+If the number of parameters is not 1, the program displays a newline.
+
+Examples:
+
+$> ./rev_print "zaz" | cat -e
+zaz$
+$> ./rev_print "dub0 a POIL" | cat -e
+LIOP a 0bud$
+$> ./rev_print | cat -e
+$
+ */

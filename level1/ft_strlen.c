@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:03:58 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/11 16:20:41 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/19 20:24:11 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,15 @@ int	ft_strlen(char *str)
 	return (0);
 
 } */
+
+/* Assignment name  : ft_strlen
+Expected files   : ft_strlen.c
+Allowed functions:
+--------------------------------------------------------------------------------
+
+Write a function that returns the length of a string.
+
+Your function must be declared as follows:
+
+int	ft_strlen(char *str);
+ */

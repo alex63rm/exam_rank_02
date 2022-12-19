@@ -6,45 +6,31 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:33:20 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/29 20:41:59 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/19 23:05:41 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-char	ft_convert_letter(char c)
-{
-	// if they are not letters, leave c as it is
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-	{
-		// exit the function, otherwise A and a will get 1 more and be converted to B or b
-		if (c == 'Z')
-		{
-			c = 'A';
-			return (c);
-		}
-		if (c == 'z')
-		{
-			c = 'a';
-			return (c);
-		}
-		else
-			c = c + 1;
-	}
-	return (c);
-}
-
-
-void	ft_rotone(char *s1)
+void	ft_rotone(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (s1[i])
+	while (str[i])
 	{
-		s1[i] = ft_convert_letter(s1[i]);
-		write (1, &s1[i], 1);
-	i++;
+			// if they are not letters, leave c as it is
+		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+		{
+			if (str[i] == 'Z')	// special case is Z and z, manually we turn it into A or a
+				str[i] = 'A';
+			else if (str[i] == 'z')	// important else if to avoid entering againt
+				str[i] = 'a';
+			else
+				str[i] = str[i] + 1;
+		write (1, &str[i], 1);
+		i++;
+		}
 	}
 	return ;
 }
