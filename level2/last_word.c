@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:34:36 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/21 19:29:46 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/21 00:12:30 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_last_word(char *str)
 	// I want to start printing after the space
 	len = len + 1;
 	// print the word (while str not null, otherwise overflow if no spaces at the end)
-	while(ft_isblank(str[len]) == 0 && str[len])
+	while (ft_isblank(str[len]) == 0 && str[len])
 	{
 		write(1, &str[len], 1);
 		len++;

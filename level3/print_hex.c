@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 16:48:27 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/20 00:32:06 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/20 20:00:41 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ void	ft_print_hex(unsigned int num)
 	if (num >= 16)
 		ft_print_hex(num / 16);
 	ft_putchar("0123456789abcdef"[num % 16]);
+	/* ft_putchar is a function that outputs a single character to the standard output (usually the terminal).
+	The argument passed to the function is a character contained in the string "0123456789abcdef".
+	The expression "num % 16" is the modulo operator, which returns the remainder of the division of "num" by 16.
+	For example, if "num" is 17, the expression "num % 16" will evaluate to 1. If "num" is 32, the expression "num % 16" will evaluate to 0.
+	The brackets around "num % 16" are used to access the character at the corresponding index in the string "0123456789abcdef".
+	So, for example, if "num % 16" evaluates to 1, the character at index 1 in the string will be accessed, which is the character '1'. If "num % 16" evaluates to 10, the character at index 10 in the string will be accessed, which is the character 'a'.
+	Therefore, the function ft_putchar will output the character at the index specified by the expression "num % 16" in the string "0123456789abcdef". */
 	return ;
 }
 
