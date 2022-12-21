@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:59:58 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/16 21:29:44 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/21 20:15:11 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,15 @@ int	ft_strcmp(char *s1, char *s2)
 	ret2 = strcmp(s1, s2);
 	printf("original is %i\n", ret2);
 } */
+
+/* Assignment name  : ft_strcmp
+Expected files   : ft_strcmp.c
+Allowed functions:
+--------------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcmp (man strcmp).
+
+Your function must be declared as follows:
+
+int    ft_strcmp(char *s1, char *s2);
+ */

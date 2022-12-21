@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:33:42 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/03 19:39:40 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/21 00:41:03 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ int	ft_atoi(const char *str)
 		sign = sign * -1;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	// check if the char is a number
-	while (str[i] >= 48 && str[i] <= 57)
+	while (str[i] >= '0' && str[i] <= '9')		// check if the char is a number
 	{
 		number = number * 10 + str[i] - '0'; // number starts in 0, then it increases to the left <---10 + str[i] etc
 		i++;
@@ -57,3 +56,18 @@ int	ft_atoi(const char *str)
 	printf("original is: %d\n", ret2);
 	return (0);
 } */
+
+/* Assignment name  : ft_atoi
+Expected files   : ft_atoi.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that converts the string argument str to an integer (type int)
+and returns it.
+
+It works much like the standard atoi(const char *str) function, see the man.
+
+Your function must be declared as follows:
+
+int	ft_atoi(const char *str);
+ */

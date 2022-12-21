@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 23:24:48 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/03 09:16:25 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/21 00:47:56 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,15 @@ int	ft_strcmp(char *s1, char *s2)
 	printf("or is: %d\n", ret2);
 	return (0);
 } */
+
+/* Assignment name  : ft_strcmp
+Expected files   : ft_strcmp.c
+Allowed functions:
+--------------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcmp (man strcmp).
+
+Your function must be declared as follows:
+
+int    ft_strcmp(char *s1, char *s2);
+ */
