@@ -6,23 +6,17 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:33:42 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/21 00:41:03 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/25 13:28:22 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include<unistd.h>
-#include<stdlib.h>
-#include<stdio.h> */
+#include<unistd.h>
 
 int	ft_atoi(const char *str)
 {
-	unsigned int		i;
-	int					sign;
-	long unsigned int	number;
-
-	sign = 1;
-	i = 0;
-	number = 0;
+	int		i = 0;
+	int		sign = 1;
+	int		number = 0;
 
 	/// !! order is important
 	// 1. loop to remove the spaces or positive (only come at the beggining)
@@ -36,16 +30,20 @@ int	ft_atoi(const char *str)
 		sign = sign * -1;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')		// check if the char is a number
+	while (str[i] >= '0' && str[i] <= '9')		// check if the 'char' is a number
 	{
-		number = number * 10 + str[i] - '0'; // number starts in 0, then it increases to the left <---10 + str[i] etc
+		number = number * 10 + str[i] - 48; // number starts in 0, then it increases to the left <---10 + str[i] etc
 		i++;
 	}
 	return (number * sign);
 }
-/* int	main(void)
+
+/* #include<stdlib.h>
+#include<stdio.h>
+
+int	main(void)
 {
-	char array[] = "-13268!";
+	char array[] = "-2147483648";
 	int	ret1;
 	int ret2;
 
@@ -56,6 +54,8 @@ int	ft_atoi(const char *str)
 	printf("original is: %d\n", ret2);
 	return (0);
 } */
+
+// WITH ATOI LONG DOES NOT MATTER.
 
 /* Assignment name  : ft_atoi
 Expected files   : ft_atoi.c

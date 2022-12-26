@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 01:33:35 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/18 01:48:00 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:54:33 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_pgcd(unsigned int number1, unsigned int number2)
 		index = number1;
 	while (index > 0)				// loop decresing until the index remainder is 0 for both numbers
 	{
-		if (number1 % index == 0 && number2 % index == 0)
+		if (number1 % index == 0 && number2 % index == 0)	// here opposite to LCM, it is number % index
 		{
 			printf("%d", index);
 			return ;
@@ -32,7 +32,6 @@ void	ft_pgcd(unsigned int number1, unsigned int number2)
 		index--;
 	}
 	return ;
-
 }
 
 int	main(int argc, char **argv)
@@ -47,3 +46,30 @@ int	main(int argc, char **argv)
 	printf("\n");
 	return (0);
 }
+
+/* Assignment name  : pgcd
+Expected files   : pgcd.c
+Allowed functions: printf, atoi, malloc, free
+--------------------------------------------------------------------------------
+
+Write a program that takes two strings representing two strictly positive
+integers that fit in an int.
+
+Display their highest common denominator followed by a newline (It's always a
+strictly positive integer).
+
+If the number of parameters is not 2, display a newline.
+
+Examples:
+
+$> ./pgcd 42 10 | cat -e
+2$
+$> ./pgcd 42 12 | cat -e
+6$
+$> ./pgcd 14 77 | cat -e
+7$
+$> ./pgcd 17 3 | cat -e
+1$
+$> ./pgcd | cat -e
+$
+ */

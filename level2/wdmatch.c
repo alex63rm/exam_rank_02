@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 23:43:35 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/23 12:24:41 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 11:07:29 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_wdmatch(char *s1, char *s2)
 	int i = 0;
 	int j = 0;
 	int	count = 0;
-	
+
 	while (s1[i])					// a double loop as usual
 	{
 		while (s2[j])				// the important thing in this one is to keep the position of j in the second string
@@ -45,7 +45,7 @@ void	ft_wdmatch(char *s1, char *s2)
 			if (s1[i] == s2[j])
 			{
 				count++;			// if they are equal, I count and break. I do not equal j = 0, I want to keep the position of j.
-				break;
+				break;				// !! break to continue with the next i in s1.
 			}
 		j++;
 		}

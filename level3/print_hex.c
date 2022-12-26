@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 16:48:27 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/20 20:00:41 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:25:43 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ unsigned int ft_atoi(char *str)
 
 void	ft_print_hex(unsigned int num)
 {
-	if (num >= 16)
+	if (num >= 16)			// NO LOOP WITH RECURSIVE
 		ft_print_hex(num / 16);
 	ft_putchar("0123456789abcdef"[num % 16]);
 	/* ft_putchar is a function that outputs a single character to the standard output (usually the terminal).

@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 20:17:07 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/18 21:27:49 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:53:15 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ void	ft_rstr_capitalizer(char *str)
 	int i = 0;
 	while (str[i])
 	{
-		// the first condition could also be ft_isalpha == 1
-		if (ft_isspace(str[i]) == 0 && (ft_isspace(str[i + 1]) == 1 || str[i + 1] == '\0'))	//check if last_letter or end of string
+		if (ft_isspace(str[i]) == 0 && (ft_isspace(str[i + 1]) == 1 || str[i + 1] == '\0'))	// same as wordcount
 			str[i] = ft_toupper(str[i]);
 		else
 			str[i] = ft_tolower(str[i]);	// else. turn it to lower

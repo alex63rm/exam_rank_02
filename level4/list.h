@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 21:41:52 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 16:21:23 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/26 16:40:47 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/26 16:41:02 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+//this one is given and we don't need to submit it
 
-typedef struct	s_list
+typedef struct s_list t_list;
+
+struct s_list
 {
-	struct s_list *next;
-	void	*data;
-} t_list;
-
-#endif
+	int     data;
+	t_list  *next;
+};

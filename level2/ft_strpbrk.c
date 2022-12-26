@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:50:17 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/13 23:12:10 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/25 13:39:37 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 char *ft_strpbrk(const char *s1, const char *s2)
 {
 	int i = 0;
+	int j;
 
 	while (s1[i])
 	{
-		int j = 0;
+		j = 0;
 		while (s2[j])
 		{
 			if (s2[j] == s1[i])

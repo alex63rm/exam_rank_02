@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 18:46:10 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/20 00:18:37 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/24 12:05:37 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ char *ft_save_nbr(char *ptr, int n_len, long nbr)	// treat number as long to avo
 		ptr[0] = '-';		// it has to be the first position
 		nbr = nbr * -1;  // convert to + to enter the loop
 	}
-	while (nbr > 0)	// it is oposite to putnbr because I am writing from the end to 0. Like the write first and then the division
+	while (nbr > 0)	// it is oposite to putnbr because I am writing from the end to 0. Draw Larrain formula
 	{
-		ptr[n_len - 1] = (nbr % 10) + 48; // start in n_len - 1
+		ptr[n_len - 1] = (nbr % 10) + 48; // start in n_len - 1. It is already in the correct
 		nbr = nbr / 10;
 		n_len--;
 	}
@@ -72,13 +72,26 @@ char *ft_itoa(int nbr)
 	return (ptr);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char *ret;
-	int nbr = 500; //-2147483648
+	int nbr = 500; //-2147483648	// check the INT_MAX and INT_MIN with the library <limits.h>
 
 	ret = ft_itoa(nbr);
 	printf("char nbr is: %s\n", ret);
 
 	return (0);
-}
+} */
+
+/* Assignment name  : ft_itoa
+Expected files   : ft_itoa.c
+Allowed functions: malloc
+--------------------------------------------------------------------------------
+
+Write a function that takes an int and converts it to a null-terminated string.
+The function returns the result in a char array that you must allocate.
+
+Your function must be declared as follows:
+
+char	*ft_itoa(int nbr);
+ */

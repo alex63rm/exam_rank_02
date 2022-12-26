@@ -1,58 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   last_word.c                                        :+:      :+:    :+:   */
+/*   last_word2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 14:34:36 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/21 00:12:30 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/26 17:16:55 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/26 18:01:56 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
-//#include<stdio.h>
 
-int	ft_isblank(char c)
+int	ft_isspace(int c)
 {
-	if (c == 32 || c == 9)
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
 
-void	ft_last_word(char *str)
+int	ft_strlen(char *str)
 {
-	unsigned int	len;
-
-	len = 0;
-	// 1. Start from the end by counting the length of the string
-	while (str[len])
-		len++;
-	// remove the '\0' to start from the last letter of the index
-	len = len - 1;
-	// 2.remove the final spaces or tabs
-	while (ft_isblank(str[len]) == 1)
-		len--;
-	// 3.count the lenght of the word
-	while (ft_isblank(str[len]) == 0)
-		len--;
-	// len stopped in the next space (beggining of the word)
-	// I want to start printing after the space
-	len = len + 1;
-	// print the word (while str not null, otherwise overflow if no spaces at the end)
-	while (ft_isblank(str[len]) == 0 && str[len])
-	{
-		write(1, &str[len], 1);
-		len++;
-	}
+	int i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
+void	ft_last_word(char *str)
+{
+	int len = ft_strlen(str);	// 1.calculate len
+	int start = 0;
+	int end = 0;
+
+	len = len - 1;				// len = 7  --> len[0] to len[6]. So start from len - 1
+	while (len >= 0 && ft_isspace(str[len]) == 1)	// 2.loop-remove the final spaces or tabs   <--- avoid overflow (len >= 0)
+		len--;
+	end = len;				// fix the end position of the word
+	while (len >= 0 && ft_isspace(str[len]) == 0)
+		len--;
+	start = len + 1;	// len stopped in the next space (beginning of the word)
+						// I want to start printing after the space
+	while (start <= end)	// // print the word
+	{
+		write(1, &str[start], 1);
+		start++;
+	}
+	return ;
+}
 
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		ft_last_word(argv[1]);
+		ft_last_word(argv[1]);	// no need to check "if there are no words" the function will not print anything if there are no letters
 	}
 	write (1, "\n", 1);
 	return (0);

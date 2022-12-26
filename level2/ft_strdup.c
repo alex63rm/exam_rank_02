@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:14:56 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/19 13:36:03 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/25 13:37:24 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 //#include <string.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	size_t	i;
-	
-	i = 0;
+	int i= 0;
+
 	while (str[i])
 		i++;
 	return (i);
@@ -27,24 +26,20 @@ size_t	ft_strlen(char *str)
 
 char	*ft_strdup(char *src)
 {
-	size_t	i;
+	int		i = 0;
 	char	*ptr;
 
-	i = 0;
 	if(!src)
 		return (0);
-	// don't forget + 1 for the null
-	ptr = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	// control the malloc
+	ptr = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));	// don't forget + 1 for the null
 	if (!ptr)
 		return (0);
 	while (src[i])
-		{
-			ptr[i] = src[i];
-			i++;
-		}
-	// finalize in '\0'
-	ptr[i] = '\0';
+	{
+		ptr[i] = src[i];
+		i++;
+	}
+	ptr[i] = '\0';		// finalize in '\0'
 	return (ptr);
 }
 
@@ -60,5 +55,17 @@ char	*ft_strdup(char *src)
 
 	printf("my result: %s\n", ret1);
 	printf("or result: %s\n", ret2);
-	
+
 } */
+
+/* Assignment name  : ft_strdup
+Expected files   : ft_strdup.c
+Allowed functions: malloc
+--------------------------------------------------------------------------------
+
+Reproduce the behavior of the function strdup (man strdup).
+
+Your function must be declared as follows:
+
+char    *ft_strdup(char *src);
+ */

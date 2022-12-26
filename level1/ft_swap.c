@@ -6,11 +6,9 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:06:50 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 20:25:37 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 17:16:07 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include<stdio.h>
 
 void	ft_swap(int *a, int *b)
 {
@@ -20,6 +18,8 @@ void	ft_swap(int *a, int *b)
 	*b = *a;
 	*a = aux;
 }
+
+//#include<stdio.h>
 
 /* int	main(void)
 {

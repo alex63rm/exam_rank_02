@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:02:49 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/21 00:21:15 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/24 13:08:59 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,23 @@ char	**ft_split(char *str)
 	char	**ptr;
 	int 	i = 0;
 	int		word = 0;
+	int 	wordcount;
 	int		start = 0;
 
 	if (str == 0)
 		return (0);
-	ptr = (char **)malloc(sizeof(char *) * ft_wordcount(str) + 1);	// 1. count the words
+	wordcount = ft_wordcount(str);
+	ptr = (char **)malloc(sizeof(char *) * wordcount + 1);	// 1. count the words
 	if (!ptr)
 		return (0);
-	while (str[i])									// 2. Loop the words by moving the index. Similar to first_word and last_word
+	while (str[i])									// 2. Loop all the words by moving the index. Similar to first_word and last_word
 	{
 		while (str[i] && ft_is_space(str[i]) == 1)	// loop spaces
 			i++;
 		start = i;									// save & fix the starting position
 		while (str[i] && ft_is_space(str[i]) == 0)	// loop the index while there is a word, get the len of word
 			i++;
-		if (i > start)
+		if (i > start)	// also (word < wordcount) or if (wordcount) and make it wordcount--;
 		{
 			ptr[word] = ft_strndup(str + start, i - start);	// 3. Save the words with strndup
 			word++;

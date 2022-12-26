@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:49:46 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/18 21:28:27 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:49:23 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,16 @@ void	ft_str_capitalizer(char *str)
 	int i = 0;
 	while (str[i])
 	{
-		if (i == 0)	// special case for first position. Convert it, write it, advance, restart loop
+		if (i == 0)	// !!! special case for first position. Convert it, write it, advance, restart loop
 		{
 			str[i] = ft_toupper(str[i]);
 			write(1, &str[i], 1);
 			i++;
-			continue ;
+			//continue ;
 		}
-		if (ft_isspace(str[i]) == 0 && (ft_isspace(str[i - 1]) == 1))	// check if first letter of word
-			str[i] = ft_toupper(str[i]);
+		if (ft_isspace(str[i]) == 0 && (ft_isspace(str[i - 1]) == 1))	// check if first letter of word. i is the char and I check if i-1 was space. Another way is
+																		// if i is space and i+1 is not, in this case I should change str[i+1]
+			str[i] = ft_toupper(str[i]);								// numbers and strange chars are already checked in toupper & tolower.
 		else
 			str[i] = ft_tolower(str[i]);	//else turn to lower
 		write(1, &str[i], 1);	// write the str[i] converted
@@ -61,7 +62,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		int i = 1;
-		while (i < argc)	// pass the arguments 1 by 1.
+		while (i < argc)	// pass the arguments 1 by 1. Check with printf
 		{
 			ft_str_capitalizer(argv[i]);
 			i++;

@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_power_of_2_bit.c                                :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 19:15:47 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/13 19:24:50 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/26 16:17:01 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/26 16:20:28 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-int	is_power_of_2(int n)
+typedef struct    s_list
 {
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	if (n >= 2)
-	{
-		if ((n & (n - 1)) == 0)	// bitwise
-			return (1);
-	}
-	return (0);
-}
+    struct s_list *next;
+    void          *data;
+}                 t_list;	// this is the list
 
-/* int	main(void)
-{
-	int n = 20;
-	while (n > 0)
-	{
-		is_power_of_2(n);
-		printf ("n is %d ", n);
-		printf ("result is %d\n", is_power_of_2(n));
-		n--;
-	}
-	return (0);
-} */
+#endif

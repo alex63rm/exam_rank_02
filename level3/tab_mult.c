@@ -6,13 +6,13 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 21:30:06 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/18 22:19:49 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/24 10:41:05 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-void	ft_putchar(unsigned int c)	// careful!! if we don't put the functions in the correct order we may get mgcc errors
+void	ft_putchar(unsigned int c)	// careful!! if we don't put the functions in the correct order we may get gcc errors
 {
 	write(1, &c, 1);
 }

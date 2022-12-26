@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:59:58 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/21 20:15:11 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/25 13:30:03 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-
-	i = 0;
+	int	i = 0;
 	// forgot the last s1[i] == s2[i]
-	while (s1[i] && s2[i] && s1[i] == s2[i])
+	while (s1[i] && s2[i] && s1[i] == s2[i])	// while both (otherwise overflow) && equal advance
 		i++;
-	return (s1[i] - s2[i]);
+	return (s1[i] - s2[i]);						//return the difference
 
 }
 /* int	main (void)

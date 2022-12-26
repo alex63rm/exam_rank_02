@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 17:13:34 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/23 17:14:07 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 10:36:46 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 
 unsigned char	reverse_bits(unsigned char octet)
 {
-	unsigned char	res;
+	unsigned char	rev_bit;
 	int		count;
 
-	res = 0;
+	rev_bit = 0;
 	count = 8;
 	while (count)
 	{
-		res = res * 2 + (unsigned char)(octet % 2);		// similar to itoa_base
+		rev_bit = rev_bit * 2 + (unsigned char)(octet % 2);		// similar to itoa_base
 		octet = octet / 2;
 		count--;
 	}
-	printf("%d\n", res);
-	return (res);
+	return (rev_bit);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int n = 2;
 	reverse_bits(n);
 	return (0);
-}
+} */
 
 /* Assignment name  : reverse_bits (reverse like a string)
 Expected files   : reverse_bits.c

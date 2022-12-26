@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 18:03:54 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/23 19:16:27 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 15:19:29 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void sort_int_tab(int *tab, unsigned int size)	// SEE DRAWING and DRAW to see th
 
 	while (i < size - 1)			// we don't need to check the last position, the value will be saved there
 	{
-		j = i;						// j will start from i, not from the beggining
+		j = i;						// j will start from i (keeps teh position), not from the beggining
 		while (j < size)
 		{
-			if (tab[j] < tab[i])	// this is a ft_swap. 
+			if (tab[j] < tab[i])	// this is a ft_swap.
 			{
-				temp = tab[i];		// save the value before replacing 
+				temp = tab[i];		// save the value before replacing
 				tab[i] = tab[j];	// replace the value found
 				tab[j] = temp;		// use the other place in the tab to save the number
 			}
@@ -47,7 +47,7 @@ int	main(void)
 		printf("array before: %d\n", array[i]);
 		i++;
 	}
-	
+
 	i = 0;
 	while (i < size)
 	{
@@ -60,7 +60,7 @@ int	main(void)
 
 /* Assignment name  : sort_int_tab
 Expected files   : sort_int_tab.c
-Allowed functions: 
+Allowed functions:
 --------------------------------------------------------------------------------
 
 Write the following function:

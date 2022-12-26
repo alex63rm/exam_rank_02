@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:53:18 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/23 13:45:04 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/25 22:52:32 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	print_bits(unsigned char octet)
 	}
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int n = 2;
 	print_bits(n);
 	return (0);
 }
-
+ */
 /* Assignment name  : print_bits
 Expected files   : print_bits.c
 Allowed functions: write
@@ -47,3 +47,16 @@ void	print_bits(unsigned char octet);
 
 Example, if you pass 2 to print_bits, it will print "00000010"
  */
+
+//APPROACH
+
+// number 2:
+//	0	0	0	0	0	0	1	0
+// [7] [6] [5] [4]............ [0]
+
+// move i times (octet >> i)----> 0
+// compare with & and only write if we brought a 1
+// number 1
+//	0	0	0	0	0	0	0	1
+// convert to char with + 48
+// write

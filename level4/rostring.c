@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 23:16:11 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/22 00:37:39 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/24 14:11:31 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int		ft_isspace(int c)
 void	ft_rostring(char *str)				// use the logic and DRAW
 {
 	int i = 0;
-	int	first_word_start;
-	int	first_word_end;
+	int	start;
+	int	end;
 	int first_time_space;
 
 	while (str[i] && ft_isspace(str[i]) == 1)	// loop initial spaces
 		i++;
-	first_word_start = i;			// save the start of the word
+	start = i;			// save the start of the word
 	while (str[i] && ft_isspace(str[i]) == 0)
 		i++;
-	first_word_end = i;				// save the end of first word
+	end = i;				// save the end of first word
 	// loop through all the words write the string as usual (remove and leave just one space)
 	first_time_space = 1;			// I need to create this flag to avoid putting a space at the beggining of the string
 	while (str[i])
@@ -48,10 +48,10 @@ void	ft_rostring(char *str)				// use the logic and DRAW
 		first_time_space = 0;			// inside the loop set the "flag" to zero to start writing spaces after the words
 	}									// no need to write i++ at the end, they are already inside
 	write (1, " ", 1);
-	while (first_word_end > first_word_start)
+	while (end > start)					// write the first_word
 	{
-		write(1, &str[first_word_start], 1);
-		first_word_start++;
+		write(1, &str[start], 1);
+		start++;
 	}
 }
 

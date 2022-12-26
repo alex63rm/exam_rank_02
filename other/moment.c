@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:26:55 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/23 19:17:46 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/24 17:14:07 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,8 @@ char			*moment(unsigned int duration)
 {
 	char	*number;
 	int		i;
-	int		len;
 	char	*str;
 
-	len = ft_intlen(duration);	// as usual
 	i = 0;
 	if (duration >= 2592000)	//MONTHS. Max, months, no more fit in an int (60sec * 60min * 24 hours * 30days = 2592000)
 	{
@@ -97,7 +95,6 @@ char			*moment(unsigned int duration)
 			number = ft_itoa(duration / 2592000);	// convert the number to a char string
 			str = (char *)malloc(sizeof(char) * 13 + ft_intlen(duration));	// make space for the string
 			ft_strcat(str, number, " months ago.\0");		// concatenate the 2 strings (pass str to save it there)
-			i += ft_intlen(duration) - 1;		// para que hace esto?? creo que no se usa para nada
 		}
 	}
 	else if (duration >= 86400)
@@ -113,7 +110,6 @@ char			*moment(unsigned int duration)
 			number = ft_itoa(duration / 86400);
 			str = (char *)malloc(sizeof(char) * 11 + ft_intlen(duration));
 			ft_strcat(str, number, " days ago.\0");
-			i += ft_intlen(duration) - 1;
 		}
 	}
 	else if (duration >= 3600)
@@ -129,7 +125,6 @@ char			*moment(unsigned int duration)
 			number = ft_itoa(duration / 3600);
 			str = (char *)malloc(sizeof(char) * 12 + ft_intlen(duration));
 			ft_strcat(str, number, " hours ago.\0");
-			i += ft_intlen(duration) - 1;
 		}
 	}
 	else if (duration >= 60)
@@ -145,7 +140,6 @@ char			*moment(unsigned int duration)
 			number = ft_itoa(duration / 60);
 			str = (char *)malloc(sizeof(char) * 14 + ft_intlen(duration));
 			ft_strcat(str, number, " minutes ago.\0");
-			i += ft_intlen(duration) - 1;
 		}
 	}
 	else
@@ -161,7 +155,6 @@ char			*moment(unsigned int duration)
 			number = ft_itoa(duration);
 			str = (char *)malloc(sizeof(char) * 14 + ft_intlen(duration));
 			ft_strcat(str, number, " seconds ago.\0");
-			i += ft_intlen(duration) - 1;
 		}
 	}
 	return (str);

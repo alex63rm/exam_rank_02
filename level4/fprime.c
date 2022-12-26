@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:54:25 by alejarod          #+#    #+#             */
-/*   Updated: 2022/11/19 16:31:10 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 11:57:18 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,28 @@
 
 void	fprime(int n)
 {
-	int	index = 2;	
-	if (n == 1)
+	int	index = 2;
+	if (n == 1)					// special case 1 is 1
 	{
 		printf("1");
 		return ;
 	}
-	if (n < 1)
+	if (n < 1)					// 0 or negative, exit
 		return ;
-	while (index <= n)
+	while (index <= n)			// check all the numbers <= to n
 	{
-	// we print if it is divisible (== 0)
-		if(n % index == 0)
+		if(n % index == 0)		// if it is divisible
 		{
-			printf("%i", index);
-			// update the number
-			n = n / index;
-			// restart the index to 1
-			index = 1;
-			if (n == 1)
+			printf("%i", index);	// print it
+			n = n / index;			// make the number smaller by the divided one
+			index = 1;				// once the number has been made small, restart the index (same process)
+
+			if (n != 1)
+				printf("*");		// if we are not at the end, print the *
+			if (n == 1)				// don't print the * after the last number
 				return ;
-			else
-				printf("*");
 		}
-		// increase the index + 1
-		index++;
+		index++;			// increase the index + 1
 	}
 	return ;
 }
@@ -48,13 +45,12 @@ void	fprime(int n)
 int	main(int argc, char **argv)
 {
 	int number;
-	
+
 	if (argc == 2)
 	{
-		number = atoi(argv[1]);
+		number = atoi(argv[1]);		// save the argument string as a number.
 		fprime(number);
 	}
-	// save the argument string as a number.
 	printf("\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 20:44:38 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/21 00:38:23 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/25 13:19:51 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ int	main(int argc, char **argv)
 {
 	if (argc == 4)
 	{
-		ft_do_op(argv[1], argv[2][0], argv[3]);
-		// return to exit so that the the write is not executed
+		ft_do_op(argv[1], argv[2][0], argv[3]);			// return to exit so that the the write is not executed
 		return (0);
 	}
 	// for some reason it does not work with an else here
