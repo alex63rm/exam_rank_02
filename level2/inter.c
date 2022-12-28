@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:41:41 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 13:47:09 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:42:40 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	ft_not_written(int c, char *s1, unsigned int position)	// check in s1 if the
 	}
 	return (0);
 }
-
 
 void	ft_padinto(char *s1, char *s2)
 {

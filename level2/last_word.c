@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   last_word2.c                                       :+:      :+:    :+:   */
+/*   last_word.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 17:16:55 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 18:01:56 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:50:55 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ void	ft_last_word(char *str)
 	end = len;				// fix the end position of the word
 	while (len >= 0 && ft_isspace(str[len]) == 0)
 		len--;
-	start = len + 1;	// len stopped in the next space (beginning of the word)
-						// I want to start printing after the space
+	start = len + 1;	// len stopped in the next space (beginning of the word). I want to start printing after the space
 	while (start <= end)	// // print the word
 	{
 		write(1, &str[start], 1);

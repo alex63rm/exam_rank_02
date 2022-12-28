@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 20:58:25 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 20:30:59 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:15:58 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_repeat_alpha(char *str)
 				j--;
 			}
 		}
-		else if (str[i] >= 'a' && str[i] <= 'z')	// one loop for lower
+		else if (str[i] >= 'a' && str[i] <= 'z')	// one loop for lower. Careful with else
 		{
 			j = str[i] - 'a' + 1;
 			while (j > 0)

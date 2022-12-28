@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_list.c                                     :+:      :+:    :+:   */
+/*   sort_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:36:22 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 16:59:06 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:49:33 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 
 	int aux;
 
-	while (lst->next)
+	while (lst->next)		// Sort: loop INSIDE the node
 	{
 		if ((*cmp)(lst->data, lst->next->data) == 0)	// apply subject function. To this data and next data. If it returns 0, means a >= b and we need to sort
 		{

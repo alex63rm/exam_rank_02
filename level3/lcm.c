@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 23:32:43 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 12:49:22 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/28 22:22:03 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 
 	if (a == 0 || b == 0)	//if one of them is 0, return 0
 		return (0);
-	while (1)		// loop without a specific condition
+	while (1)		// loop EVERY NUMBER FROM 1. Divide it by both and return when the % is 0.
 	{
 		if(index % a == 0 && index % b == 0)	// INDEX % NUMBER, when there is no remainder for both, it is the lcm;
 			return (index);

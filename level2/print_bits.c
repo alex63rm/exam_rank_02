@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:53:18 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 22:52:32 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 20:06:31 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,25 @@
 void	print_bits(unsigned char octet)
 {
 	int i = 7;					// this loop is NOT a string. Numbers are counted from RIGHT TO LEFT.
-	unsigned char bit;
+	unsigned char bit;			// apparently the type does not matter
+
 	while (i >= 0)				// loop the 8 positions (from 7 to 0)
 	{
 		bit = octet >> i;		// bring the most significant bit to the position of - - - - - - - 0
 		bit = bit & 1;			// compare biwise opeator with number 1 (0 0 0 0 0 0 0 1)
-		bit = bit + '0';		// convert to char, and start writing the string.
+		bit = bit + 48;			// convert to char, and start writing the string.
 		write (1, &bit, 1);
 		i--;
 	}
 }
 
-/* int	main(void)
+int	main(void)
 {
 	int n = 2;
 	print_bits(n);
 	return (0);
 }
- */
+
 /* Assignment name  : print_bits
 Expected files   : print_bits.c
 Allowed functions: write

@@ -6,13 +6,13 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 20:44:38 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 13:19:51 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:25:48 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 #include<stdio.h>
-#include<stdlib.h>
+#include<stdlib.h>	// for atoi
 
 
 void	ft_do_op(char *s1, char c, char *s3)

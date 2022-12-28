@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 20:21:31 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 11:48:44 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:38:04 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_base(int c, int str_base)
 	int		i;
 
 	i = 0;
-	while (i < str_base)		// loop teh string while it is in the base
+	while (i < str_base)		// loop teh string while it is in the base[0] - base[15]
 	{
 		if (c == low_base[i] || c == up_base[i])
 			return (i);			// return the position

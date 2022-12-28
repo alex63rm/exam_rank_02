@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 20:54:36 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 11:18:32 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:02:58 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ void	ft_expand_str(char *str)
 		}
 		// write spaces after words (except last one). In this case, 3 spaces
 		if (wordcount > 1)
-		{
 			write (1, "   ", 3);
-		}
 	wordcount--;
 	}
 	write (1, "\n", 1);		// write it at the end

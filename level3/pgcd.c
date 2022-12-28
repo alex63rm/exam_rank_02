@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 01:33:35 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 12:54:33 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/28 22:31:22 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_pgcd(unsigned int number1, unsigned int number2)
 
 	if (number1 > number2)
 		index = number2;
-	else if (number2 > number1)		// set index as the lowest number
+	else if (number2 > number1)		// set index as the lowest number (for efficiency to avoid timeout?). It could also be the hiughest of both
 		index = number1;
 	while (index > 0)				// loop decresing until the index remainder is 0 for both numbers
 	{

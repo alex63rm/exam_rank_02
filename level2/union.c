@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:52:09 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 11:03:42 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 20:23:52 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	ft_union(char *s1, char *s2)
 	}
 	while(s2[j])
 	{
-		if ((ft_is_written(s1, s2[j], i) == 0) && (ft_is_written(s2, s2[j], j)) == 0) // search if the letter in s2 was written in the first and in the second string
-			write (1, &s2[j], 1);
+		if ((ft_is_written(s1, s2[j], i) == 0) && (ft_is_written(s2, s2[j], j)) == 0) // search if the letter in s2 was written in the first and in the second string.
+			write (1, &s2[j], 1);														// i here is the len of the 1st string
 		j++;
 	}
 	return ;

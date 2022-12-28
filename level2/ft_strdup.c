@@ -6,13 +6,13 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:14:56 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 13:37:24 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:32:42 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-//#include <stdio.h>
-//#include <string.h>
+#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 int	ft_strlen(char *str)
@@ -29,8 +29,6 @@ char	*ft_strdup(char *src)
 	int		i = 0;
 	char	*ptr;
 
-	if(!src)
-		return (0);
 	ptr = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));	// don't forget + 1 for the null
 	if (!ptr)
 		return (0);
@@ -43,9 +41,9 @@ char	*ft_strdup(char *src)
 	return (ptr);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char	array_src[] = "hello 1";
+	char	array_src[] = "hello";
 
 	char	*ret1;
 	char	*ret2;
@@ -56,7 +54,7 @@ char	*ft_strdup(char *src)
 	printf("my result: %s\n", ret1);
 	printf("or result: %s\n", ret2);
 
-} */
+}
 
 /* Assignment name  : ft_strdup
 Expected files   : ft_strdup.c

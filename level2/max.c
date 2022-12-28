@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:41:25 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 22:43:10 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:52:22 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ The function returns the largest number found in the array.
 If the array is empty, the function returns 0.
  */
 
-// APPROACH:
+// APPROACH: Copy to max if we find a higher number
 
 //			max = |	 0	|
 
