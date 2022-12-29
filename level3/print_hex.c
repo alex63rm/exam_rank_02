@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 16:48:27 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 12:25:43 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 19:37:49 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_putchar(int c)
 	return ;
 }
 
-unsigned int ft_atoi(char *str)
+int ft_atoi(char *str)
 {
-	unsigned int number = 0;
+	int number = 0;
 	int sign = 1;
 	unsigned int i = 0;
 
@@ -65,8 +65,32 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		number = ft_atoi(argv[1]);
+		if (number < 0)
+			return (0);			// subject: only takes positive numbers
 		ft_print_hex(number);
 	}
 	write (1, "\n", 1);
 	return (0);
 }
+
+/* Assignment name  : print_hex
+Expected files   : print_hex.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a positive (or zero) number expressed in base 10,
+and displays it in base 16 (lowercase letters) followed by a newline.
+
+If the number of parameters is not 1, the program displays a newline.
+
+Examples:
+
+$> ./print_hex "10" | cat -e
+a$
+$> ./print_hex "255" | cat -e
+ff$
+$> ./print_hex "5156454" | cat -e
+4eae66$
+$> ./print_hex | cat -e
+$
+ */

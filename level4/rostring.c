@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 23:16:11 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/24 14:11:31 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:18:44 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_rostring(char *str)				// use the logic and DRAW
 	{
 		while (str[i] && ft_isspace(str[i]) == 1)
 			i++;
-		if (first_time_space == 0)		// the first time I want to avoid writting the space
+		if (first_time_space == 0)		// the first time I want to avoid writing the space
 			write (1, " ", 1);			// write spaces after the words (except in the first one)
 		while (str[i] && ft_isspace(str[i]) == 0)
 		{

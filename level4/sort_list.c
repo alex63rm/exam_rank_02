@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:36:22 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/27 18:49:33 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:27:56 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,36 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 	return (lst);
 }
 
+/* Assignment name  : sort_list
+Expected files   : sort_list.c
+Allowed functions:
+--------------------------------------------------------------------------------
 
+Write the following functions:
+
+t_list	*sort_list(t_list* lst, int (*cmp)(int, int));
+
+This function must sort the list given as a parameter, using the function
+pointer cmp to select the order to apply, and returns a pointer to the
+first element of the sorted list.
+
+Duplications must remain.
+
+Inputs will always be consistent.
+
+You must use the type t_list described in the file list.h
+that is provided to you. You must include that file
+(#include "list.h"), but you must not turn it in. We will use our own
+to compile your assignment.
+
+Functions passed as cmp will always return a value different from
+0 if a and b are in the right order, 0 otherwise.
+
+For example, the following function used as cmp will sort the list
+in ascending order:
+
+int ascending(int a, int b)
+{
+	return (a <= b);
+} */
 

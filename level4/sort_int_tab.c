@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 18:03:54 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 15:19:29 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:26:04 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void sort_int_tab(int *tab, unsigned int size)	// SEE DRAWING and DRAW to see th
 
 	while (i < size - 1)			// we don't need to check the last position, the value will be saved there
 	{
-		j = i;						// j will start from i (keeps teh position), not from the beggining
+		j = i;						// j will start from i (keeps the position), not from the beggining
 		while (j < size)
 		{
 			if (tab[j] < tab[i])	// this is a ft_swap.
@@ -74,3 +74,14 @@ Doubles must be preserved.
 
 Input is always coherent.
  */
+
+/* LOGICAL APPROACH
+
+It is a double loop. I need to check the number vs every position
+
+| 3 | 1 | 6 | 2 | 0 |
+i = 0
+	j = 1
+
+
+*/

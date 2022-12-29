@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 18:46:10 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/24 12:05:37 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 20:54:17 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char *ft_save_nbr(char *ptr, int n_len, long nbr)	// treat number as long to avo
 	}
 	while (nbr > 0)	// it is oposite to putnbr because I am writing from the end to 0. Draw Larrain formula
 	{
-		ptr[n_len - 1] = (nbr % 10) + 48; // start in n_len - 1. It is already in the correct
+		ptr[n_len - 1] = (nbr % 10) + 48; // start in n_len - 1. It is already in the correct	// if itoa_base: "01234567890ABCDEF"[n % base]
 		nbr = nbr / 10;
 		n_len--;
 	}

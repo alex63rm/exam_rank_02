@@ -6,31 +6,31 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 20:22:44 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/28 21:21:26 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 20:21:20 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"flood_fill.h"
 
-void	fill(char **tab, t_point size, t_point cur, char to_fill)		// create the char to_fill (it can be any char but it must be the same to be filled)
+void	fill(char **tab, t_point size, t_point begin, char to_fill)		// create the char to_fill (it can be any char but it must be the same to be filled)
 {
 	// exit condition
-	if (cur.x < 0 || cur.y < 0 || cur.y >= size.y || cur.x >= size.x 		// check if we start < 0 or above the size of the area, return
-		|| tab[cur.y][cur.x] != to_fill)										// if the char in place is different to to_fill (it will stop to fill)
+	if (begin.x < 0 || begin.y < 0 || begin.y >= size.y || begin.x >= size.x 		// check if we start < 0 or above the size of the area, return
+		|| tab[begin.y][begin.x] != to_fill)										// if the char in place is different to to_fill (it will stop to fill)
 		return ;
 
-	tab[cur.y][cur.x] = 'F';	// set the char in the position to F
+	tab[begin.y][begin.x] = 'F';	// set the char in the position to F
 
-	fill(tab, size, (t_point){cur.x-1, cur.y}, to_fill);			//run recursively in every direction (floodfill algorith recursively)
-	fill(tab, size, (t_point){cur.x+1, cur.y}, to_fill);
-	fill(tab, size, (t_point){cur.x, cur.y+1}, to_fill);
-	fill(tab, size, (t_point){cur.x, cur.y-1}, to_fill);
+	fill(tab, size, (t_point){begin.x-1, begin.y}, to_fill);			//run recursively in every direction (floodfill algorithm recursively)
+	fill(tab, size, (t_point){begin.x+1, begin.y}, to_fill);
+	fill(tab, size, (t_point){begin.x, begin.y+1}, to_fill);
+	fill(tab, size, (t_point){begin.x, begin.y-1}, to_fill);
 
 }
 
 void	flood_fill(char **tab, t_point size, t_point begin)
 {
-	fill(tab, size, begin, tab[begin.y][begin.x]);	// add the variable to_fill (it is a char = F.)
+	fill(tab, size, begin, tab[begin.y][begin.x]);	// add the variable to_fill (it is a char = F.) // Why it ix .y and .x and opposite it gives SEGFAULT?
 }
 
 #include <stdlib.h>

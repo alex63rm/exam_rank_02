@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:02:49 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/24 13:08:59 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:10:32 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,17 +87,14 @@ int main ()
 {
 	char s1[] = " hello	 over\n    		\t there \t";
 
-	printf("\nsplit\n");
-	char **s;
-	s = ft_split(s1);
-	int index = 0;
-	while (s[index])
-		printf("\n|%s|\n", s[index++]);
+	char **split;
+	split = ft_split(s1);
+
+	int i = 0;
+	while (split[i])
+		printf("\n|%s|\n", split[i++]);
 	return (0);
 }
-
-
-
 
 /* Assignment name  : ft_split
 Expected files   : ft_split.c

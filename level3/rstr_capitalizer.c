@@ -6,19 +6,12 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 20:17:07 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 18:53:15 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 19:40:08 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 #include<stdio.h>
-
-/* int	ft_isalpha(int c)
-{
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))	// careful with && and ||
-		return (1);
-	return (0);
-} */
 
 int	ft_isspace(int c)
 {
