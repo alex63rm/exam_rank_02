@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 17:16:55 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 21:36:21 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/30 01:12:23 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_last_word(char *str)
 	int start = 0;
 	int end = 0;
 
-	len = len - 1;				// len = 7  --> len[0] to len[6]. So start from len - 1
+	len = len - 1;				// Before the LOOP. len = 7  --> len[0] to len[6]. So start from len - 1
 	while (len >= 0 && ft_isspace(str[len]) == 1)	// 2.loop-remove the final spaces or tabs   <--- avoid overflow (len >= 0)
 		len--;
 	end = len;				// fix the end position of the word

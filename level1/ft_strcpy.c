@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:59:53 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 20:23:32 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:54:44 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@
 
 char	*ft_strcpy(char *s1, const char *s2)
 {
-	unsigned int	i;
-
-	i = 0;
+	int i = 0;
 	while (s2[i])
 	{
-		s1[i] = s2[i];
+		s1[i] = s2[i];		// check MAN, s2 is src, s1 is dest
 		i++;
 	}
-	s1[i] = '\0';
+	s1[i] = '\0';	// add the NUL, the MAN specifies
 	return (s1);
 }
 

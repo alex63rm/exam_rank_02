@@ -6,37 +6,47 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 23:32:43 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/28 22:22:03 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 22:38:27 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-// lcm is the lowest number in which both of the numbers are divisible: i.e.
-// 10 and 20, min is 20 // 6 and 8 is 24 (24 % 6 == 0, 24 % 8 == 0)
 unsigned int	lcm(unsigned int a, unsigned int b)
 {
-	unsigned int index = 1;
+	int i = 1;
 
-	if (a == 0 || b == 0)	//if one of them is 0, return 0
+	if (a == 0 || b == 0)	// special case 0.
 		return (0);
-	while (1)		// loop EVERY NUMBER FROM 1. Divide it by both and return when the % is 0.
+	if (a > b)				// start index from lowest number. Else, when they are too big, TIMEOUT
+		i = b;
+	if (b > a)
+		i = a;
+	while (1)		// loop indefinetely
 	{
-		if(index % a == 0 && index % b == 0)	// INDEX % NUMBER, when there is no remainder for both, it is the lcm;
-			return (index);
-		index++;			// increase the index until we find a highest number
+		if(i % a == 0 && i % b == 0)	// INDEX % NUMBER, when there is no remainder for both, it is the lcm;
+			return (i);
+		i++;			// increase the index until we find a highest number
 	}
-	return (index);
+	return (i);
 }
 
 int main(void)
 {
-	int a = 2;
-	int b = 1;
+	int a = 7;
+	int b = 80;
 
 	printf("lcm is: %d\n", lcm(a,b));
 	return (0);
 }
+
+//APPROACH
+/*
+lcm is the lowest number in which both of the numbers are divisible: i.e.
+10 and 20, min is 20 // 6 and 8 is 24 (24 % 6 == 0, 24 % 8 == 0)
+
+Create a big i that increases indefinetely. Divide it by both numbers and when they return 0, that i is the LCM.
+*/
 
 /* Assignment name  : lcm
 Expected files   : lcm.c

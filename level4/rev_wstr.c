@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_wstr.c                                         :+:      :+:    :+:   */
+/*   rev_wstr2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 21:26:35 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/22 00:39:51 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/29 22:40:22 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/30 01:14:28 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,39 +21,49 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_rev_wstr(char *str, int len)						// DRAW THE EXAMPLE. try a small example = le temps du
+int	ft_isspace(int c)
 {
-	int start;
-	//printf("\nlen at start %d\n", len);
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	return (0);
+}
 
-	while (len > 0)											// Similar to last word. I will stop at len 0 (sanitize and test for errors)
+void	ft_rev_wstr(char *str)			// DRAW THE EXAMPLE. It is a "las word" inside a loop
+{
+	int len = ft_strlen(str);
+	int end;
+	int start;
+
+	len = len - 1;					// special case. Before entering the loop, skip the NUL. Set the starting position in the last char of the string
+	while (len >= 0)
 	{
-		while (str[len - 1] != ' ' && len > 0)				// think. Loop while no spaces. && len > 0 is for the first word (to avoid ovewrflow to the left <<<<)
+		while (len >= 0 && ft_isspace(str[len] == 1))	// skip the NUL (it is the special case)
 			len--;
-		start = len;										// fix the position from where to start writing
-		while (str[start] != '\0' && str[start] != ' ')		// loop until we find a space or end of string (subject says no spaces in the start or end, and just one space b2in words)
+		end = len;
+		while (len >= 0 && ft_isspace(str[len]) == 0)
+			len--;
+		start = len + 1;						// Draw
+		while (start <= end)					// Draw
 		{
 			write (1, &str[start], 1);
 			start++;
 		}
-		// printf("\nlen before space %d\n", len);
-		if (len > 0)										// "flag" in all the cases except for the first word, write spaces
-			write (1, " ", 1);
-		len = len - 1;										// decrease one position to the space (when restarting the loop again we - 1 and we skip the space)
-		// printf("\nlen at end %d\n", len);
+		if (len > 0)				// "flag", when we are not in the first postion, write a space after the word
+			write(1, " ", 1);
+		len--;
 	}
+	return ;
+
 }
 
 int	main(int argc, char **argv)
 {
-	int len;
-
 	if (argc == 2)
 	{
-		len = ft_strlen(argv[1]);
-		ft_rev_wstr(argv[1], len);
+		ft_rev_wstr(argv[1]);
 	}
-	write (1, "\n", 1);
+	write(1, "\n", 1);
+	return (0);
 }
 
 /* Assignment name  : rev_wstr

@@ -1,8 +1,14 @@
+LVL 1 & 2
+
 ft_swap
+is_power_of_2
 last_word
+ft_strcpy
 
-LVL3
+LVL 3
 str_capitalizer
+lcm
 
-LVL4
+LVL 4
 sort_list
+rev_wstr

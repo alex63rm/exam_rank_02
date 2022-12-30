@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:15:47 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 19:50:19 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/29 22:12:12 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	is_power_of_2(int n)
 		return (1);
 	if (n >= 2)
 	{
-		if ((n & (n - 1)) == 0)	// bitwise
+		if ((n & (n - 1)) == 0)	//  ***!!!*** ( ) are important!!!
 			return (1);
 	}
 	return (0);
