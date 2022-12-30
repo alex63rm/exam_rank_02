@@ -6,17 +6,17 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:33:42 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 13:28:22 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/30 11:06:48 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str)		// NO NEED FOR LONG
 {
 	int		i = 0;
 	int		sign = 1;
-	int		number = 0;
+	int		number = 0;				// NO NEED FOR LONG or strange things
 
 	/// !! order is important
 	// 1. loop to remove the spaces or positive (only come at the beggining)

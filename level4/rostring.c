@@ -5,50 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 23:16:11 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 21:18:44 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/30 14:23:04 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/30 17:42:38 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int		ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
 
-void	ft_rostring(char *str)				// use the logic and DRAW
+void	ft_rostring(char *str)
 {
 	int i = 0;
-	int	start;
-	int	end;
-	int first_time_space;
+	int start = 0;
+	int end = 0;
+	int written = 0;
 
-	while (str[i] && ft_isspace(str[i]) == 1)	// loop initial spaces
+	while (str[i] && ft_isspace(str[i]) == 1)		// 1. Advance through the FIRST WORD and save the start and end positions
 		i++;
-	start = i;			// save the start of the word
-	while (str[i] && ft_isspace(str[i]) == 0)
+	start = i;
+	while (str[i] && ft_isspace(str[i]) == 0)		// DRAW for easier assignment of start and end
 		i++;
-	end = i;				// save the end of first word
-	// loop through all the words write the string as usual (remove and leave just one space)
-	first_time_space = 1;			// I need to create this flag to avoid putting a space at the beggining of the string
-	while (str[i])
+	end = i - 1;
+	int flag = 0;
+	while (str[i])									// 2. Continue writing in a loop after the first word
 	{
-		while (str[i] && ft_isspace(str[i]) == 1)
+		while (str[i] && ft_isspace(str[i]) == 1)		// Skip the spaces and leave just one
 			i++;
-		if (first_time_space == 0)		// the first time I want to avoid writing the space
-			write (1, " ", 1);			// write spaces after the words (except in the first one)
+		if (flag == 1)								// 4. Flag to skip the space after the FIRST WORD
+			write(1, " ", 1);						// 3. Write a " " after skipping all the spaces (subject: just one space)
 		while (str[i] && ft_isspace(str[i]) == 0)
 		{
 			write(1, &str[i], 1);
+			written++;								// This is a flag to check if we wrote something. In this case, we need a space before FIRST WORD
 			i++;
 		}
-		first_time_space = 0;			// inside the loop set the "flag" to zero to start writing spaces after the words
-	}									// no need to write i++ at the end, they are already inside
-	write (1, " ", 1);
-	while (end > start)					// write the first_word
+		flag = 1;				// reset the flag
+	}
+	if (written >= 1)			// 6. Flag. We only need a space if we wrote something before "abc", not "_abc". If "le temps" we need space: "temps_le"
+		write(1, " ", 1);
+	while (start <= end)		// 5. Write the first word at the end of the string
 	{
 		write(1, &str[start], 1);
 		start++;
@@ -57,13 +58,26 @@ void	ft_rostring(char *str)				// use the logic and DRAW
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
+	if (argc > 1)
 	{
 		ft_rostring(argv[1]);
 	}
 	write(1, "\n", 1);
 	return (0);
 }
+
+//APPROACH:
+
+/*
+| a | b | c |  |  |  |
+the problem is that I am always writing a space + first word, which is good if there are words BEFORE
+So I need a flag, only I will write the space if there were words before.
+I create a written flag. Inside the place where it writes. If it is 0, it did not enter the loop and it means
+we don't need a space before the first word, since it is the only word
+
+| NULL  |   | a | b | c |  |  |  |
+
+ */
 
 /* Assignment name  : rostring
 Expected files   : rostring.c

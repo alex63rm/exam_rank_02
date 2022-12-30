@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 13:03:40 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 20:20:57 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:41:27 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ft_putstr(char *str)
 {
-	unsigned int	i;
-
-	i = 0;
+	int i = 0;
 	while (str[i])
 	{
 		write(1, &str[i], 1);

@@ -5,75 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 20:22:44 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 20:21:20 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/30 11:46:10 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/30 12:30:29 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"flood_fill.h"
-
-void	fill(char **tab, t_point size, t_point begin, char to_fill)		// create the char to_fill (it can be any char but it must be the same to be filled)
+typedef struct s_point
 {
-	// exit condition
-	if (begin.x < 0 || begin.y < 0 || begin.y >= size.y || begin.x >= size.x 		// check if we start < 0 or above the size of the area, return
-		|| tab[begin.y][begin.x] != to_fill)										// if the char in place is different to to_fill (it will stop to fill)
+	int	x;
+	int y;
+}	t_point;
+
+void	fill(char **tab, t_point size, t_point begin, char to_fill)
+{
+	// exit condition. If begin is negative, or begin higher than size, or char is not the same
+	if (begin.y < 0 || begin.x < 0 || begin.x >= size.x || begin.y >= size.y
+		|| tab[begin.y][begin.x] != to_fill)
 		return ;
+	tab[begin.y][begin.x] = 'F';	// set char to 'F'
 
-	tab[begin.y][begin.x] = 'F';	// set the char in the position to F
-
-	fill(tab, size, (t_point){begin.x-1, begin.y}, to_fill);			//run recursively in every direction (floodfill algorithm recursively)
-	fill(tab, size, (t_point){begin.x+1, begin.y}, to_fill);
+	fill(tab, size, (t_point){begin.x+1, begin.y}, to_fill);	//run recursively in every direction (floodfill algorithm recursively)
+	fill(tab, size, (t_point){begin.x-1, begin.y}, to_fill);
 	fill(tab, size, (t_point){begin.x, begin.y+1}, to_fill);
 	fill(tab, size, (t_point){begin.x, begin.y-1}, to_fill);
-
 }
 
 void	flood_fill(char **tab, t_point size, t_point begin)
 {
-	fill(tab, size, begin, tab[begin.y][begin.x]);	// add the variable to_fill (it is a char = F.) // Why it ix .y and .x and opposite it gives SEGFAULT?
+	fill(tab, size, begin, tab[begin.y][begin.x]);	// add the variable to_fill (it is a char = F.) // Why if it is .y and .x and opposite it gives SEGFAULT?
 }
 
-#include <stdlib.h>
-#include <stdio.h>
-
-char** make_area(char** zone, t_point size)
-{
-	char** new;
-
-	new = malloc(sizeof(char*) * size.y);
-	for (int i = 0; i < size.y; ++i)
-	{
-		new[i] = malloc(size.x + 1);
-		for (int j = 0; j < size.x; ++j)
-			new[i][j] = zone[i][j];
-		new[i][size.x] = '\0';
-	}
-
-	return new;
-}
-
-int main(void)
-{
-	t_point size = {8, 5};
-	char *zone[] = {
-		"11110001",
-		"10001001",
-		"10010001",
-		"10110001",
-		"11100001",
-	};
-
-	char**  area = make_area(zone, size);
-	for (int i = 0; i < size.y; ++i)
-		printf("%s\n", area[i]);
-	printf("\n");
-
-	t_point begin = {7, 4};
-	flood_fill(area, size, begin);
-	for (int i = 0; i < size.y; ++i)
-		printf("%s\n", area[i]);
-	return (0);
-}
 
 /*
 Assignment name  : flood_fill

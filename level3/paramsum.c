@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   paramsum.c                                         :+:      :+:    :+:   */
+/*   paramsum2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 18:52:55 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 19:30:51 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/30 11:09:30 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/30 11:45:19 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-void	put_nbr(int nbr)
+void	ft_putnbr(int nbr)
 {
-	if (nbr >= 9)
-		print_nbr(nbr / 10);
-	nbr = nbr % 10 + '0';
+	if (nbr >= 10)
+		ft_putnbr(nbr / 10);
+	nbr = nbr % 10 + 48;
 	write(1, &nbr, 1);
 }
 
 int	main(int argc, char **argv)
 {
-	argv = 0;		// since we don't need it, initialize to 0 or cast it to void
-
-	if (argc == 1)
-		write(1, "0", 1);
+	(void)argv;		// we don't need it, cast to void or initialize to 0
+	if (argc > 1)
+	{
+		ft_putnbr(argc - 1);		// skip argv[0]
+		write(1, "\n", 1);
+	}
 	else
-		print_nbr(argc - 1);	// we don't want argv[0]
-	write(1, "\n", 1);
-	return (0);
+		write(1, "0\n", 2);
+	return  (0);
 }
 
 /* Assignment name  : paramsum

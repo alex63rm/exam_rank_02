@@ -6,11 +6,16 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 22:51:19 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/27 18:49:54 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/30 14:20:00 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+typedef struct s_list
+{
+	struct s_list *next;
+	void	*data;
+}	t_list;
+
 
 int	ft_list_size(t_list *begin_list)
 {

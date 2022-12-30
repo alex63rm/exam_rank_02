@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_wstr2.c                                        :+:      :+:    :+:   */
+/*   rev_wstr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 22:40:22 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/30 01:14:28 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:35:36 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_rev_wstr(char *str)			// DRAW THE EXAMPLE. It is a "las word" inside a l
 	int end;
 	int start;
 
-	len = len - 1;					// special case. Before entering the loop, skip the NUL. Set the starting position in the last char of the string
+	len = len - 1;					// Special case. Before entering the loop, skip the NUL. Set the starting position in the last char of the string
 	while (len >= 0)
 	{
 		while (len >= 0 && ft_isspace(str[len] == 1))	// skip the NUL (it is the special case)
