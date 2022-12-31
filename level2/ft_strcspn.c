@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 16:29:56 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 19:28:57 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/31 18:26:39 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,21 @@ size_t	ft_strcspn(const char *s, const char *reject)	// compare with MAN functio
 	i = 0;
 	while (s[i])
 	{
-		j = 0;							// every round searches reject from the beginning of reject
+		j = 0;						// every round searches reject from the beginning of reject
 		while (reject[j])
 		{
-			if (reject[j] == s[i])
-				return (i);				// return the position of s where it found the letter
+			if (s[i] == reject[j])
+				return (i);			// return the position of s where it found the letter
 			j++;
 		}
 	i++;
 	}
-return (i);
+	return (i);		// if no chars are found, returns the len of *s
 }
 
-//this function will return 2, because 'l' in World is found in position 2 of the original string
+// this function will return 2, because 'l' in World is found in position 2 of the original string
+// MAKE A MAIN AND COMPARE WITH ORIGINAL FUNCTION
+
 /* int main (void)
 {
 	char s[] = "Hello";
@@ -49,6 +51,7 @@ return (i);
 	printf("or: %lu\n", ret2);
 	return (0);
 } */
+
 
 /* Assignment name	: ft_strcspn
 Expected files	: ft_strcspn.c

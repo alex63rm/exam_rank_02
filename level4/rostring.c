@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 14:23:04 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/30 17:42:38 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/12/31 17:48:50 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_rostring(char *str)
 	int flag = 0;
 	while (str[i])									// 2. Continue writing in a loop after the first word
 	{
-		while (str[i] && ft_isspace(str[i]) == 1)		// Skip the spaces and leave just one
+		while (str[i] && ft_isspace(str[i]) == 1)		// Skip ALL the spaces and leave just one
 			i++;
 		if (flag == 1)								// 4. Flag to skip the space after the FIRST WORD
 			write(1, " ", 1);						// 3. Write a " " after skipping all the spaces (subject: just one space)

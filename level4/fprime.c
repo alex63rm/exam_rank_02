@@ -1,56 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fprime.c                                           :+:      :+:    :+:   */
+/*   fprime2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 14:54:25 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 20:47:54 by alejarod         ###   ########.fr       */
+/*   Created: 2022/12/31 19:08:03 by alejarod          #+#    #+#             */
+/*   Updated: 2022/12/31 19:39:47 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+//printf & atoi
+#include<stdio.h>
+#include<stdlib.h>
 
-void	fprime(int n)		// HAS NOTHING TO DO WITH PRIME NUMBERS
+void	ft_fprime(int number)		// HAS NOTHING TO DO WITH PRIME NUMBERS (example 42)
 {
-	int	index = 2;
-	if (n == 1)					// special case 1 is 1
-	{
+	int index = 2;				// start in 2, in 1 we would be at the same place all the time
+	if (number == 1)			// special case, 1 is 1
 		printf("1");
-		return ;
-	}
-	if (n < 1)					// 0 or negative, exit
-		return ;
-	while (index <= n)			// check all the numbers <= to n (starting index in 2, otherwise we alwayus stay at the same place)
+	if (number >= 2)
 	{
-		if(n % index == 0)		// if it is divisible
+		while (1)				// infinite loop
 		{
-			printf("%i", index);	// print it
-			n = n / index;			// make the number smaller by the divided one
-			index = 1;				// restart the index at 1 (same process)
+			if (number % index == 0)		// if we found a divisible number
+			{
+				printf("%d", index);			// print it
+				number = number / index;		// continue from that number
+				index = 1;						// reset index to 1 (it will become 2 again after index++)
 
-			if (n != 1)				// if we are not at the end, print the *
-				printf("*");
-			if (n == 1)				// when finished, don't print the *
-				return ;
+				if (number != 1)		// if the number is not one, print the * for the next
+					printf("*");
+				if (number == 1)		// exit condition: don't print the * and return;
+					return ;
+			}
+		index++;
 		}
-		index++;			// increase the index + 1, making it i = 2 again
 	}
-	return ;
 }
 
 int	main(int argc, char **argv)
 {
 	int number;
-
 	if (argc == 2)
 	{
-		number = atoi(argv[1]);		// save the argument string as a number.
-		if (number < 0)
-			return (0);
-		fprime(number);
+		number = atoi(argv[1]);
+		if (number <= 0)		// subject: strictly positive numbers
+		{
+			printf("\n");
+			return ;
+		}
+		ft_fprime(number);
 	}
 	printf("\n");
 	return (0);
