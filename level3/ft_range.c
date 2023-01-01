@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 20:41:35 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/28 22:11:12 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/01 13:04:21 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 int	*ft_range(int start, int end)
 {
 	int	*ptr;						// 1. check if size == 0
-	int	size;						// 2. case for end >= start
+	int	size;						// 2. case for start <= end
 	int	i;							// 3. case for start >= end
 
-	if (end - start == 0 || start - end == 0)	// if size == 0, skip and return 0.
+	if (start == end)			// if size == 0, skip and return 0.
 		return (0);
 	if (end >= start)			// one case if start >= end, other for the other
 	{
 		size = end - start;
-		ptr = (int *)malloc(sizeof(int) * size);
+		ptr = (int *)malloc(sizeof(int) * size);	// no need + 1, int arrays don't end in NULL
 		if (!ptr)
 			return (0);
 		i = 0;
@@ -44,7 +44,7 @@ int	*ft_range(int start, int end)
 		if (!ptr)
 			return (0);
 		i = 0;
-		while (start >= end)	// it will return size positions
+		while (start >= end)
 		{
 			ptr[i] = start;
 			//printf("%i ", ptr[i]);
@@ -56,16 +56,16 @@ int	*ft_range(int start, int end)
 	return (0);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int start = 0;
-	int end = -5;
+	int end = -9;
 
 	ft_range(start, end);
 
 	return (0);
 }
-
+ */
 /* Assignment name  : ft_range
 Expected files   : ft_range.c
 Allowed functions: malloc

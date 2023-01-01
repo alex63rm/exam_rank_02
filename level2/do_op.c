@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_op.c                                            :+:      :+:    :+:   */
+/*   do_op2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:44:38 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 19:25:48 by alejarod         ###   ########.fr       */
+/*   Created: 2023/01/01 11:43:44 by alejarod          #+#    #+#             */
+/*   Updated: 2023/01/01 12:04:27 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+// atoi, printf, write
 #include<stdio.h>
-#include<stdlib.h>	// for atoi
+#include<stdlib.h>
 
-
-void	ft_do_op(char *s1, char c, char *s3)
+void	ft_do_op(int n1, int c, int n3)
 {
-	int	n1;
-	int	n3;
 	int result;
-
-	n1 = atoi(s1);
-	n3 = atoi(s3);
-
 	if (c == '+')
 		result = n1 + n3;
 	else if (c == '-')
@@ -34,20 +27,21 @@ void	ft_do_op(char *s1, char c, char *s3)
 		result = n1 / n3;
 	else if (c == '%')
 		result = n1 % n3;
-	printf("%i\n", result);		// take care with the \n in printf, to avoid duplicating it
+	printf("%i", result);	// do not use putnbr (gives problems with negatives)
 	return ;
 }
 
-// FOR SOME REASON IT DOES NOT DETECT THE ARGS WITHOUT QUOTES, but we don't have to control it
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
+	int n1;
+	int n3;
 	if (argc == 4)
 	{
-		ft_do_op(argv[1], argv[2][0], argv[3]);			// return to exit so that the the write is not executed
-		return (0);
+		n1 = atoi(argv[1]);
+		n3 = atoi(argv[3]);
+		ft_do_op(n1, argv[2][0], n3);
 	}
-	// for some reason it does not work with an else here
-	write (1, "\n", 1);
+	printf("\n");
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:36:22 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 21:27:56 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:53:56 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 			aux = lst->next->data;					// ft_swap
 			lst->next->data = lst->data;
 			lst->data = aux;
-			lst = tmp;								// update the head or something like this??
+			lst = tmp;								// update the head
 		}
 		else
 			lst = lst->next;				// is like i++. If the numbers are already sorted, update value of lst with the next (in this case lst = lst->next)

@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:03:58 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 20:24:11 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/01 11:42:50 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 int	ft_strlen(char *str)
 {
-	int	i;
-
-	i = 0;
+	int	i = 0;
 	while (str[i])
 		i++;
 	return (i);

@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:33:42 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/30 11:06:48 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/01 12:26:53 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)		// NO NEED FOR LONG
 {
 	int		i = 0;
 	int		sign = 1;
-	int		number = 0;				// NO NEED FOR LONG or strange things
+	int		number = 0;
 
 	/// !! order is important
 	// 1. loop to remove the spaces or positive (only come at the beggining)
@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)		// NO NEED FOR LONG
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')		// check if the 'char' is a number
 	{
-		number = number * 10 + str[i] - 48; // number starts in 0, then it increases to the left <---10 + str[i] etc
+		number = number * 10 + str[i] - 48; // number starts in 0, then it increases to the left <---10 + str[i] etc. GENERIC: num = num * base + remainder
 		i++;
 	}
 	return (number * sign);
