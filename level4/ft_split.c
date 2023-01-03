@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:02:49 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 21:10:32 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/03 21:59:51 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*ft_strndup(char *str, int len)
 	return (ptr);
 }
 
-int	ft_is_space(char c)
+int ft_isspace(int c)
 {
-	if (c == '\t' || c == ' ' || c == '\n')	// the subjects says "new lines" too
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
@@ -43,7 +43,7 @@ int	ft_wordcount(char *str)
 
 	while (str[i])
 	{
-		if (ft_is_space(str[i]) == 0 && (ft_is_space(str[i + 1]) == 1 || str[i + 1] == '\0'))	// as usual, count at the end of the word or string
+		if (ft_isspace(str[i]) == 0 && (ft_isspace(str[i + 1]) == 1 || str[i + 1] == '\0'))	// as usual, count at the end of the word or string
 			count++;
 		i++;
 	}
@@ -56,24 +56,24 @@ char	**ft_split(char *str)
 	int 	i = 0;
 	int		word = 0;
 	int 	wordcount;
-	int		start = 0;
+	int		start;
+	int		end;
 
-	if (str == 0)
-		return (0);
 	wordcount = ft_wordcount(str);
 	ptr = (char **)malloc(sizeof(char *) * wordcount + 1);	// 1. count the words
 	if (!ptr)
 		return (0);
 	while (str[i])									// 2. Loop all the words by moving the index. Similar to first_word and last_word
 	{
-		while (str[i] && ft_is_space(str[i]) == 1)	// loop spaces
+		while (str[i] && ft_isspace(str[i]) == 1)	// loop spaces
 			i++;
 		start = i;									// save & fix the starting position
-		while (str[i] && ft_is_space(str[i]) == 0)	// loop the index while there is a word, get the len of word
+		while (str[i] && ft_isspace(str[i]) == 0)	// loop the index while there is a word, get the len of word
 			i++;
-		if (i > start)	// also (word < wordcount) or if (wordcount) and make it wordcount--;
+		end = i;
+		if (end > start)	// Exit condition. Also if (wordcount) and add wordcount--;
 		{
-			ptr[word] = ft_strndup(str + start, i - start);	// 3. Save the words with strndup
+			ptr[word] = ft_strndup(str + start, end - start);	// 3. Save the word with strndup.
 			word++;
 		}
 		// i++ not necessary because I would skip one char
@@ -82,19 +82,22 @@ char	**ft_split(char *str)
 	return (ptr);
 }
 
-#include <stdio.h>
-int main ()
+/* int	main(void)
 {
-	char s1[] = " hello	 over\n    		\t there \t";
+	char str[] = "	 this	 is a 	test	 ";
 
-	char **split;
-	split = ft_split(s1);
+	char **split;				// make a return char **
 
-	int i = 0;
-	while (split[i])
-		printf("\n|%s|\n", split[i++]);
-	return (0);
-}
+	split = ft_split(str);		// equal the return function
+
+	int word = 0;
+
+	while (split[word])			// loop the dobule **
+	{
+		printf("%s\n", split[word]);
+		word++;
+	}
+} */
 
 /* Assignment name  : ft_split
 Expected files   : ft_split.c

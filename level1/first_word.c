@@ -1,46 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   first_word2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 18:44:48 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 20:16:46 by alejarod         ###   ########.fr       */
+/*   Created: 2023/01/02 20:47:29 by alejarod          #+#    #+#             */
+/*   Updated: 2023/01/02 21:04:00 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include<unistd.h>
 
-int ft_isblank(int c)	// better int than char
+int	ft_isspace(int c)
 {
-	if (c == '\t' || c == ' ')
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
+
 }
 
 void	ft_first_word(char *str)
 {
-	unsigned int	i;
+	int i = 0;
+	int start;
+	int end;
 
-	i = 0;
-	while (str[i] && ft_isblank(str[i]) == 1) // loop initial spaces
+	while (str[i] && ft_isspace(str[i]) == 1)	// loop initial spaces
 		i++;
-	while (str[i] && ft_isblank(str[i]) == 0) // loop and write letters. Stop at end of str, otherwise overflow if no spaces at the end
+	start = i;									// save start of word position
+	while (str[i] && ft_isspace(str[i]) == 0)	// loop chars
+		i++;
+	end = i;									// save end of word position
+	while (start < end)							// loop writing the letters
 	{
-		write(1, &str[i], 1);
-		i++;
+		write(1, &str[start], 1);
+		start++;
 	}
 	return ;
 }
 
 int	main(int argc, char **argv)
 {
-	if(argc == 2)
+	if (argc == 2)
 	{
 		ft_first_word(argv[1]);
 	}
-	write (1, "\n", 1);
+	write(1, "\n", 1);
 	return (0);
 }
 
