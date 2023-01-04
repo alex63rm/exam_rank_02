@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 21:22:32 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 11:11:24 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/04 21:25:28 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ void	ft_putnbr(int nbr)
 	ft_putchar(nbr);
 }
 
-// 1 is NOT A PRIME NUMBER. 2 YES.
+// #1 is NOT A PRIME NUMBER. #2 IS.
 // 3. check if prime number. 1 true, 0 false. Prime: not divisible by any number except 1 and itself.
-int	ft_is_prime(int small_num)
+int	ft_is_prime(int small)
 {
 	int	index = 2;		// start the index in 2 because by 1 it will be divisible
 
-	while (index < small_num)	// just < n. because divided by itself it will return 1 and we don't want this
+	while (index < small)	// just < small. because divided by itself it will return 1 and we don't want this
 	{
-		if (small_num % index == 0) // if divided by 2, 3, index++, if at any time the % is 0, it is divisible, NOT prime.
+		if (small % index == 0) // if divided by 2, 3, index++, if at any time the % is 0, it is divisible, NOT prime.
 			return (0);		// 6 % 2 (result 3, % 0, not prime) 7 % 2 (result 3, % 1, prime)
 		index++;			// break loop before index is same as n. It means it did not exit and the number is prime
 	}
@@ -44,12 +44,16 @@ int	ft_is_prime(int small_num)
 // 2. add all the primes together
 void	ft_add_prime (int number)
 {
-	int	index = 2;	// loop from 2 until the number
+	int	index = 2;	// loop from 2 until the number (included)
 	int sumof = 0;
 
+	if (number == 0)	// Special case: exit if 0 (not prime, so no sum)
+		return ;
+	if (number == 1)	// Spceial case: exit if 1 (not prime, so no sum)
+		return ;
 	while (index <= number) // loop an index of all the numbers lower than the input number
 	{						//<= because we need to add the number itself also
-		if(ft_is_prime(index) == 1) // check if the current index is prime
+		if (ft_is_prime(index) == 1) // check if the current index is prime
 			sumof = sumof + index; // if it is, add it (we are adding all the primes)
 		index++;
 	}
@@ -84,7 +88,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		number = ft_atoi(argv[1]); // 1. change argv to int (normal atoi) and save it
-		if (number <= 0) // if number is 0 or negative return 0\n and exit
+		if (number < 0) // if number is 0 or negative return 0\n and exit
 		{
 			write(1, "0\n", 2);
 			return (0);

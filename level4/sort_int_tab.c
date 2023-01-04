@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 18:03:54 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 21:26:04 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/04 21:48:23 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void sort_int_tab(int *tab, unsigned int size)	// SEE DRAWING and DRAW to see th
 	unsigned int j = 0;
 	unsigned int temp;
 
-	while (i < size - 1)			// we don't need to check the last position, the value will be saved there
+	while (i < size)			// we don't need to check the last position, the value will be saved there
 	{
-		j = i;						// j will start from i (keeps the position), not from the beggining
+		j = i;						// j will start from i (keeps the position), not from the beggining of j
 		while (j < size)
 		{
 			if (tab[j] < tab[i])	// this is a ft_swap.
@@ -31,32 +31,20 @@ void sort_int_tab(int *tab, unsigned int size)	// SEE DRAWING and DRAW to see th
 			}
 			j++;
 		}
-	i++;
+		//	printf("%d\n", tab[i]);
+		i++;
 	}
 	return ;
 }
 
-int	main(void)
+/* int	main(void)
 {
-	int array[] = {3, 1, 5, 0};
-	unsigned int size = 4;
-	unsigned int i = 0;
+	int tab[] = {1, 2, 4, 7, -90};
+	int size = 5;
 
-	while (i < size)
-	{
-		printf("array before: %d\n", array[i]);
-		i++;
-	}
-
-	i = 0;
-	while (i < size)
-	{
-		sort_int_tab(array, size);
-		printf("array after: %d\n", array[i]);
-		i++;
-	}
+	sort_int_tab(tab, size);
 	return (0);
-}
+} */
 
 /* Assignment name  : sort_int_tab
 Expected files   : sort_int_tab.c
