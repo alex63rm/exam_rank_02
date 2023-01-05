@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 18:03:54 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/04 21:48:23 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 00:00:11 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void sort_int_tab(int *tab, unsigned int size)	// SEE DRAWING and DRAW to see th
 			}
 			j++;
 		}
-		//	printf("%d\n", tab[i]);
+		printf("%d\n", tab[i]);
 		i++;
 	}
 	return ;
@@ -39,7 +39,7 @@ void sort_int_tab(int *tab, unsigned int size)	// SEE DRAWING and DRAW to see th
 
 /* int	main(void)
 {
-	int tab[] = {1, 2, 4, 7, -90};
+	int tab[] = {1, 2, 4, -4, 1};
 	int size = 5;
 
 	sort_int_tab(tab, size);
@@ -69,7 +69,7 @@ It is a double loop. I need to check the number vs every position
 
 | 3 | 1 | 6 | 2 | 0 |
 i = 0
-	j = 1
+j = 0, 1, 2, ... , len
 
 
 */

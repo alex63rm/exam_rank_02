@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:46:10 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/30 12:30:29 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/04 23:55:56 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	fill(char **tab, t_point size, t_point begin, char to_fill)
 	if (begin.y < 0 || begin.x < 0 || begin.x >= size.x || begin.y >= size.y
 		|| tab[begin.y][begin.x] != to_fill)
 		return ;
+
 	tab[begin.y][begin.x] = 'F';	// set char to 'F'
 
 	fill(tab, size, (t_point){begin.x+1, begin.y}, to_fill);	//run recursively in every direction (floodfill algorithm recursively)

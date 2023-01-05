@@ -6,18 +6,17 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:41:25 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 19:52:22 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 16:53:52 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 int	max(int *tab, unsigned int len)
 {
-	unsigned int	i;
-	int				max;
-
-	i = 0;
-	max = 0;				// fix a reference number to 0. Like a temp value for storing the maximum value.
+	unsigned int	i = 0;
+	int				max = 0;	// fix a reference number to 0. Like a temp value for storing the maximum value.
+								// subject: if array empty, return (0);
+								// if len == 0, it will not enter the loop and return 0.
 	while (i < len)
 	{
 		if (tab[i] > max)	// just compare every position to max. If bigger, replace it

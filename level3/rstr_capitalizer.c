@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 20:17:07 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 19:40:08 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 17:49:58 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_isspace(int c)
 {
-	if (c == '\t' || c == 32)
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
@@ -52,9 +52,9 @@ void	ft_rstr_capitalizer(char *str)
 
 int	main(int argc, char **argv)
 {
+	int i = 1;		// start in 1 to skip argv[0]
 	if (argc > 1)
 	{
-		int i = 1;
 		while (i < argc)
 		{
 			ft_rstr_capitalizer(argv[i]);	// loop arguments from the beginning

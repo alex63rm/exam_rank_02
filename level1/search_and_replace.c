@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:20:59 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 23:09:00 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 16:31:30 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,8 @@ int	main(int argc, char **argv)
 {
 	if (argc == 4)
 	{
-		if(ft_strlen(argv[2]) != 1 || ft_strlen(argv[3]) != 1) // check that the 2 and 3 arguments are just 1 char
-		{
-			write(1, "\n", 1);
-			return (0);
-		}
-		ft_search_and_replace(argv[1], argv[2][0], argv[3][0]);	// pass the string and the 2 chars
+		if (ft_strlen(argv[2]) == 1 && ft_strlen(argv[3]) == 1) // check that the 2 and 3 arguments are just 1 char
+			ft_search_and_replace(argv[1], argv[2][0], argv[3][0]);	// pass the string and the 2 chars
 	}
 	write(1, "\n", 1);
 	return (0);
