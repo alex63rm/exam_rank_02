@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:56:20 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/27 18:49:41 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 21:53:23 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
 	t_list	*list_ptr;		// 2. Create a node with the given name
-	list_ptr = begin_list;	// 3. Equal the node to the first node
+	list_ptr = begin_list;	// 3. Equal the node to the first node (head)
 
 	while (list_ptr)		// loop THE NODE
 	{

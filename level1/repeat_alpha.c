@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 20:58:25 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 19:15:58 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 20:55:22 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	ft_repeat_alpha(char *str)
 {
-	int	i;
-	int j;
+	int	i = 0;
+	int j = 0;
 
-	i = 0;
 	while (str[i])
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')	// one loop for upper
 		{
-			j = str[i] - 'A' + 1;	//  algorithm to calculate the number of reps
+			j = str[i] - 'A' + 1;	// set j. Algorithm to calculate the number of reps. +1 to avoid 'a' - 'a' = 0
 			while (j > 0)
 			{
 				write (1, &str[i], 1);
@@ -48,7 +47,9 @@ void	ft_repeat_alpha(char *str)
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
+	{
 		ft_repeat_alpha(argv[1]);
+	}
 	write (1, "\n", 1);
 	return (0);
 }

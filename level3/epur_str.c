@@ -6,17 +6,17 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 23:52:14 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 11:17:45 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 21:44:30 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int	ft_isspace(char c)
+int	ft_isspace(int c)
 {
-	if (c == ' ' || c == '\t')
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
-	return(0);
+	return (0);
 }
 
 int	ft_wordcount(char *str)
@@ -69,6 +69,8 @@ int	main(int argc, char **argv)
 	write(1, "\n", 1);
 	return (0);
 }
+
+// EXACTLY SAME AS EXPAND_STR
 
 /* Assignment name  : epur_str
 Expected files   : epur_str.c

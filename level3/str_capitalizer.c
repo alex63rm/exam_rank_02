@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:49:46 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 18:49:23 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 17:54:39 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_str_capitalizer(char *str)
 	{
 		if (i == 0)	// !!! special case for first position. Convert it, write it, advance, restart loop
 		{
-			str[i] = ft_toupper(str[i]);
+			str[i] = ft_toupper(str[i]);	// Always convert it, it will only convert if it is a low letter
 			write(1, &str[i], 1);
 			i++;
 			//continue ;
@@ -59,9 +59,9 @@ void	ft_str_capitalizer(char *str)
 
 int	main(int argc, char **argv)
 {
+	int i = 1;		// start in 1 to skip argv[0]
 	if (argc > 1)
 	{
-		int i = 1;
 		while (i < argc)	// pass the arguments 1 by 1. Check with printf
 		{
 			ft_str_capitalizer(argv[i]);

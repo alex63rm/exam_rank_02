@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 22:07:05 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/25 13:19:11 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/05 21:11:16 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ft_alpha_mirror(char *str)
 {
-	unsigned int i;
-
-	i = 0;
+	int i = 0;
 	while (str[i])
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
