@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:34:18 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 23:15:47 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:21:36 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ $>./ulstr "L'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte 
 l'EspRIT Ne PEuT PLuS PrOGrESsER S'iL STAgNE ET Si PErSiStENT vaNiTE ET AUTO-JUSTIFICATION.$
 $>./ulstr "S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  " | cat -e
 s'ENtoUrER De SecREt EsT Un SigNe dE MaNqUe dE COnnAIssANcE.  $
-$>./ulstr "3:21 Ba  tOut  moUn ki Ka di KE m'en Ka fe fot" | cat -e
+$>./ulstr "3:21 Ba  tOut  moUn ki Ka dni KE m'en Ka fe fot" | cat -e
 3:21 bA  ToUT  MOuN KI kA DI ke M'EN kA FE FOT$
 $>./ulstr | cat -e
 $

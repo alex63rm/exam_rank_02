@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 23:43:35 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 20:27:01 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 20:29:53 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ft_wdmatch(char *s1, char *s2)
 			if (s1[i] == s2[j])
 			{
 				count++;			// if they are equal, I count and break. I do not equal j = 0, I want to keep the position of j.
+				j++;				// jump to next position, because if the letters are repeated we are staying at the same place
 				break;				// !! break to continue with the next i in s1. If I don't break it will continue looping s2...
 			}
 		j++;

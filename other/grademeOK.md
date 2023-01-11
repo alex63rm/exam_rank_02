@@ -40,5 +40,5 @@ ft_itoa
 ***NO GRADEME***
 sort_int_tab 		(REDO). Double loop. Reset j.
 ft_list_foreach
-rostring			(pending)
+rostring			(be aware of spaces if (str[i] != '\0' && flag) to control last and first space)
 

@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 22:40:22 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/30 10:35:36 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 23:56:20 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	ft_rev_wstr(char *str)			// DRAW THE EXAMPLE. It is a "las word" inside a l
 		end = len;
 		while (len >= 0 && ft_isspace(str[len]) == 0)
 			len--;
-		start = len + 1;						// Draw
+		start = len + 1;						// Draw (skip the only space)
+
 		while (start <= end)					// Draw
 		{
 			write (1, &str[start], 1);

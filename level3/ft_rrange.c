@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:56:59 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/28 22:10:10 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/08 17:26:00 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	*ft_rrange(int start, int end)			// Same logic as ft_range
 	int	size;
 	int	i;
 
-	if (end - start == 0 || start - end == 0)	// if 0, skip and return 0
+	if (start == end)	// if 0, skip and return 0
 		return (0);
 	if (end >= start)
 	{

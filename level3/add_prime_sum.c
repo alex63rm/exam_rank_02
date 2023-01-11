@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 21:22:32 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/04 21:25:28 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 20:43:57 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_add_prime (int number)
 		return ;
 	if (number == 1)	// Spceial case: exit if 1 (not prime, so no sum)
 		return ;
-	while (index <= number) // loop an index of all the numbers lower than the input number
+	while (index <= number) // loop an index of all the numbers lower or equal (number must be added too) than the input number
 	{						//<= because we need to add the number itself also
 		if (ft_is_prime(index) == 1) // check if the current index is prime
 			sumof = sumof + index; // if it is, add it (we are adding all the primes)

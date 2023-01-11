@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 16:48:27 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 19:37:49 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 21:28:16 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ int ft_atoi(char *str)
 
 }
 
-void	ft_print_hex(unsigned int num)
+void	ft_putnbr_hex(unsigned int num)
 {
 	if (num >= 16)			// NO LOOP WITH RECURSIVE
-		ft_print_hex(num / 16);
+		ft_putnbr_hex(num / 16);
 	ft_putchar("0123456789abcdef"[num % 16]);
 	/* ft_putchar is a function that outputs a single character to the standard output (usually the terminal).
 	The argument passed to the function is a character contained in the string "0123456789abcdef".
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 		number = ft_atoi(argv[1]);
 		if (number < 0)
 			return (0);			// subject: only takes positive numbers
-		ft_print_hex(number);
+		ft_putnbr_hex(number);
 	}
 	write (1, "\n", 1);
 	return (0);

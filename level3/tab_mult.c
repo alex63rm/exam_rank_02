@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 21:30:06 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 19:58:22 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/09 21:59:17 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		number = ft_atoi(argv[1]);	// in this case positive atoi
-		if (number < 0)
+		number = ft_atoi(argv[1]);
+		if (number < 0)				// subject: just take positives (0 is positive)
 			return (0);
 		ft_tab_mult(number);
 	}

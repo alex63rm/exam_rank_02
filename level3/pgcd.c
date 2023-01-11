@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 01:33:35 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/28 22:31:22 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 21:25:37 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	ft_pgcd(unsigned int number1, unsigned int number2)
 
 	if (number1 > number2)
 		index = number2;
-	else if (number2 > number1)		// set index as the lowest number (for efficiency to avoid timeout?). It could also be the hiughest of both
+	else if (number2 > number1)		// set index as the lowest number (to avoid timeout?)
 		index = number1;
 	while (index > 0)				// loop decresing until the index remainder is 0 for both numbers
 	{
 		if (number1 % index == 0 && number2 % index == 0)	// here opposite to LCM, it is number % index
 		{
-			printf("%d", index);
+			printf("%d", index);	// it will finally print 1 if there is no other number.
 			return ;
 		}
 		index--;

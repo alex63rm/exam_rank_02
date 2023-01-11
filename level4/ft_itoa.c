@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 18:46:10 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/01 21:38:56 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/08 19:47:39 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_save_nbr(char *ptr, int n_len, long n)	// LONG n (to fit INT_MIN)
 		ptr[n_len - 1] = (n % 10) + 48; // start in n_len - 1, correct order. If itoa_base: "01234567890ABCDEF"[n % base]
 		n = n / 10;
 		n_len--;
-	}
+	}	// do not return and do not add the null here
 }
 
 int	ft_int_len(long n)    // // LONG n (to fit INT_MIN)
@@ -67,7 +67,7 @@ char *ft_itoa(int nbr)
 	if (!ptr)
 		return (0);
 	ft_save_nbr(ptr, n_len, nbr); 	// 3. write the number in ptr
-	ptr[n_len] = '\0'; 				// end it in null.
+	ptr[n_len] = '\0'; 				// end it in null. HERE, not in save_nbr
 	return (ptr);
 }
 

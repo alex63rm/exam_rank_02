@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:05:39 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 20:20:10 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/08 15:58:58 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void	ft_putnbr(int nbr)
 
 int	main(void)
 {
-	unsigned int	n;
-
-	n = 1;
+	int	n = 1;
 	while (n <= 100)
 	{
 		if (n % 3 == 0 && n % 5 == 0)

@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 23:07:02 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/19 20:33:31 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:10:58 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_rev_print(char *str)
 	int	len;
 
 	len = ft_strlen(str);	// compute to start from the end
-	len = len - 1;		// start in - 1 strlen = 2 is str[0] and str[1]
+	len = len - 1;		// len - 1 before entering the loop. If start str[len-1], errors at len[0]
 	while (len >= 0)	// start printing from the end
 	{
 		write(1, &str[len], 1);

@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 18:03:54 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/05 00:00:11 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/12 00:28:10 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void sort_int_tab(int *tab, unsigned int size)	// SEE DRAWING and DRAW to see th
 			}
 			j++;
 		}
-		printf("%d\n", tab[i]);
+		//printf("%d\n", tab[i]);
 		i++;
 	}
 	return ;

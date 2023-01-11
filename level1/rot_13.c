@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:21:35 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/26 19:19:00 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/09 20:11:53 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	ft_rot_13(char *str)
 	unsigned int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if ((str[i] >= 'A' && str[i] <= 'M') || (str[i] >= 'a' && str[i] <= 'm'))
 			str[i] = str[i] + 13;
 		else if ((str[i] >= 'N' && str[i] <= 'Z') || (str[i] >= 'n' && str[i] <= 'z')) // ELSE is important, otherwise the before char will enter in this if
 			str[i] = str[i] - 13;
 		write(1, &str[i], 1);
-	i++;
+		i++;
 	}
 }
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 		ft_rot_13(argv[1]);
 	}
 	write (1, "\n", 1);
-	return(0);
+	return (0);
 }
 
 /* Assignment name  : rot_13

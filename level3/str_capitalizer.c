@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:49:46 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/05 17:54:39 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/08 19:08:51 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,16 @@ void	ft_str_capitalizer(char *str)
 	int i = 0;
 	while (str[i])
 	{
-		if (i == 0)	// !!! special case for first position. Convert it, write it, advance, restart loop
-		{
-			str[i] = ft_toupper(str[i]);	// Always convert it, it will only convert if it is a low letter
-			write(1, &str[i], 1);
-			i++;
-			//continue ;
-		}
-		if (ft_isspace(str[i]) == 0 && (ft_isspace(str[i - 1]) == 1))	// check if first letter of word. i is the char and I check if i-1 was space. Another way is
-																		// if i is space and i+1 is not, in this case I should change str[i+1]
+		if (i == 0)			// !!! special case for first position. Always convert it, it will only convert if it is a low letter
+			str[i] = ft_toupper(str[i]);
+		else if (ft_isspace(str[i]) == 0 && (ft_isspace(str[i - 1]) == 1))	// check if first letter of word. i is the char and I check if i-1 was space.
 			str[i] = ft_toupper(str[i]);								// numbers and strange chars are already checked in toupper & tolower.
 		else
 			str[i] = ft_tolower(str[i]);	//else turn to lower
 		write(1, &str[i], 1);	// write the str[i] converted
 		i++;
 	}
-	write(1, "\n", 1);
+	write(1, "\n", 1);	// newline after each argument!!
 }
 
 

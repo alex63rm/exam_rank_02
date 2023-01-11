@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fprime2.c                                          :+:      :+:    :+:   */
+/*   fprime.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 19:08:03 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/31 19:39:47 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 22:21:23 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,23 @@
 void	ft_fprime(int number)		// HAS NOTHING TO DO WITH PRIME NUMBERS (example 42)
 {
 	int index = 2;				// start in 2, in 1 we would be at the same place all the time
+
 	if (number == 1)			// special case, 1 is 1
 		printf("1");
-	if (number >= 2)
+	while (number >= 2)
 	{
-		while (1)				// infinite loop
+		if (number % index == 0)		// if we found a divisible number
 		{
-			if (number % index == 0)		// if we found a divisible number
-			{
-				printf("%d", index);			// print it
-				number = number / index;		// continue from that number
-				index = 1;						// reset index to 1 (it will become 2 again after index++)
+			printf("%d", index);			// print it
+			number = number / index;		// continue from that number
+			index = 1;						// reset index to 1 (it will become 2 again after index++)
 
-				if (number != 1)		// if the number is not one, print the * for the next
-					printf("*");
-				if (number == 1)		// exit condition: don't print the * and return;
-					return ;
-			}
-		index++;
+			if (number != 1)		// if the number is not one, print the * for the next
+				printf("*");
+			if (number == 1)		// exit condition: don't print the * and return;
+				return ;
 		}
+		index++;
 	}
 }
 
@@ -45,10 +43,10 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		number = atoi(argv[1]);
-		if (number <= 0)		// subject: strictly positive numbers
+		if (number < 0)		// subject: strictly positive numbers
 		{
 			printf("\n");
-			return ;
+			return (0);
 		}
 		ft_fprime(number);
 	}

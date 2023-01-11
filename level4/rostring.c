@@ -6,11 +6,12 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 14:23:04 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/31 17:48:50 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/12 00:23:44 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
+#include<stdio.h>
 
 int	ft_isspace(int c)
 {
@@ -31,13 +32,13 @@ void	ft_rostring(char *str)
 	start = i;
 	while (str[i] && ft_isspace(str[i]) == 0)		// DRAW for easier assignment of start and end
 		i++;
-	end = i - 1;
+	end = i;									// come 1 back to avoid writing the space, other
 	int flag = 0;
 	while (str[i])									// 2. Continue writing in a loop after the first word
 	{
 		while (str[i] && ft_isspace(str[i]) == 1)		// Skip ALL the spaces and leave just one
 			i++;
-		if (flag == 1)								// 4. Flag to skip the space after the FIRST WORD
+		if (str[i] && flag == 1)			// 4. Flag to skip the space after the FIRST WORD && the spaces at the end of the last word
 			write(1, " ", 1);						// 3. Write a " " after skipping all the spaces (subject: just one space)
 		while (str[i] && ft_isspace(str[i]) == 0)
 		{
@@ -49,7 +50,7 @@ void	ft_rostring(char *str)
 	}
 	if (written >= 1)			// 6. Flag. We only need a space if we wrote something before "abc", not "_abc". If "le temps" we need space: "temps_le"
 		write(1, " ", 1);
-	while (start <= end)		// 5. Write the first word at the end of the string
+	while (start < end)			// 5. Write the first word at the end of the string
 	{
 		write(1, &str[start], 1);
 		start++;
@@ -58,9 +59,14 @@ void	ft_rostring(char *str)
 
 int	main(int argc, char **argv)
 {
+	int i = 1;
 	if (argc > 1)
 	{
-		ft_rostring(argv[1]);
+		while (i < argc)
+		{
+			ft_rostring(argv[i]);
+			i++;
+		}
 	}
 	write(1, "\n", 1);
 	return (0);

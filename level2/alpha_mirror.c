@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 22:07:05 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/05 21:11:16 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:27:55 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_alpha_mirror(char *str)
 	while (str[i])
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = 'a' + 'z' - str[i];			// this is the counter we need to know how many times to repeat it
+			str[i] = 'a' + 'z' - str[i];			// this is the algorithm we need to remember
 		else if (str[i] >= 'A' && str[i] <= 'Z')	// ELSE is important
 			str[i] = 'A' + 'Z' - str[i];
 		write(1, &str[i], 1);

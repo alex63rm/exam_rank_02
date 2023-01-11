@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 23:32:43 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 22:38:27 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/11 21:22:41 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 
 	if (a == 0 || b == 0)	// special case 0.
 		return (0);
-	if (a > b)				// start index from lowest number. Else, when they are too big, TIMEOUT
-		i = b;
-	if (b > a)
+	if (a > b)				// start index from highest number. Else, when both are too big, TIMEOUT
 		i = a;
+	if (b > a)
+		i = b;
 	while (1)		// loop indefinetely
 	{
 		if(i % a == 0 && i % b == 0)	// INDEX % NUMBER, when there is no remainder for both, it is the lcm;

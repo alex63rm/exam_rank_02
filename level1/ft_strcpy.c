@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:59:53 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/29 21:54:44 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/08 18:15:32 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // check man strcpy
 
-char	*ft_strcpy(char *s1, const char *s2)
+char	*ft_strcpy(char *s1, char *s2)
 {
 	int i = 0;
 	while (s2[i])

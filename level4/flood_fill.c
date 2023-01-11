@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:46:10 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/04 23:55:56 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/08 17:58:55 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ void	fill(char **tab, t_point size, t_point begin, char to_fill)
 
 	tab[begin.y][begin.x] = 'F';	// set char to 'F'
 
-	fill(tab, size, (t_point){begin.x+1, begin.y}, to_fill);	//run recursively in every direction (floodfill algorithm recursively)
-	fill(tab, size, (t_point){begin.x-1, begin.y}, to_fill);
+	fill(tab, size, (t_point){begin.x+1, begin.y}, to_fill);	// run recursively in every direction (floodfill algorithm recursively)
+	fill(tab, size, (t_point){begin.x-1, begin.y}, to_fill);	// we update the begin point. Cast to (t-point) { } which is the format of the structure
 	fill(tab, size, (t_point){begin.x, begin.y+1}, to_fill);
 	fill(tab, size, (t_point){begin.x, begin.y-1}, to_fill);
 }
 
 void	flood_fill(char **tab, t_point size, t_point begin)
 {
-	fill(tab, size, begin, tab[begin.y][begin.x]);	// add the variable to_fill (it is a char = F.) // Why if it is .y and .x and opposite it gives SEGFAULT?
+	fill(tab, size, begin, tab[begin.y][begin.x]);	// remember: **tab -> tab[begin.y][begin.x] needs 2 boxes
+	// add the variable to_fill (it is a char = F.) //  has to be .y and .x, opposite segfault
 }
 
 
