@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 23:32:43 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/11 21:22:41 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/12 14:38:45 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 unsigned int	lcm(unsigned int a, unsigned int b)
 {
-	int i = 1;
+	int i = 1;		// start in 1, in 0 I cannot divide!
 
 	if (a == 0 || b == 0)	// special case 0.
 		return (0);
@@ -31,14 +31,14 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 	return (i);
 }
 
-int main(void)
+/* int main(void)
 {
 	int a = 7;
 	int b = 80;
 
 	printf("lcm is: %d\n", lcm(a,b));
 	return (0);
-}
+} */
 
 //APPROACH
 /*

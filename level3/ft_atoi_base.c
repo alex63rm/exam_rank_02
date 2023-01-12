@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 20:21:31 by alejarod          #+#    #+#             */
-/*   Updated: 2022/12/27 18:38:04 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/12 22:07:55 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_base(int c, int str_base)
 			return (i);			// return the position
 		i++;
 	}
-	return (0);
+	return (-1);		// do not return 0, because 0 is also in the base !!!
 }
 
 int	ft_atoi_base(const char *str, int str_base)
@@ -47,7 +47,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	// loop: while the number is inside the base (in normal atoi it was between 0 to 9)
-	while (ft_base(str[i], str_base) != 0)
+	while (ft_base(str[i], str_base) >= 0)
 	{
 		//same as atoi, but no - 48, it has its own base
 		num = num * str_base + ft_base(str[i], str_base);
@@ -62,11 +62,11 @@ int	ft_atoi_base(const char *str, int str_base)
 int	main(void)
 {
 	int	ret1;
-	ret1 = ft_atoi_base("-3000", 16);
+	ret1 = ft_atoi_base("456", 10);
 	printf("%d\n", ret1);
 	return (0);
-} */
-
+}
+ */
 /* Assignment name  : ft_atoi_base
 Expected files   : ft_atoi_base.c
 Allowed functions: None

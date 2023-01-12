@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 14:23:04 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/12 00:23:44 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:15:06 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_rostring(char *str)
 	start = i;
 	while (str[i] && ft_isspace(str[i]) == 0)		// DRAW for easier assignment of start and end
 		i++;
-	end = i;									// come 1 back to avoid writing the space, other
+	end = i;									
 	int flag = 0;
 	while (str[i])									// 2. Continue writing in a loop after the first word
 	{

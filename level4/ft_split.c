@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:02:49 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/03 21:59:51 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/12 22:07:20 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	**ft_split(char *str)
 		}
 		// i++ not necessary because I would skip one char
 	}
-	ptr[word] = '\0';
+	ptr[word] = '\0';		// imac compiler gives error. We have to put ptr[word] = 0
 	return (ptr);
 }
 
