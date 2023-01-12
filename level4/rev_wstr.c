@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 22:40:22 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/12 08:48:38 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/12 08:50:04 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_rev_wstr(char *str)			// DRAW THE EXAMPLE. It is a "las word" inside a l
 		}
 		if (len > 0)				// "flag", when we are not in the first postion, write a space after the word
 			write(1, " ", 1);
-		len--;
+		len--;						// to skip again the space
 	}
 	return ;
 
