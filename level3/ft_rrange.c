@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:56:59 by alejarod          #+#    #+#             */
-/*   Updated: 2023/01/08 17:26:00 by alejarod         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:56:32 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ int	*ft_rrange(int start, int end)			// Same logic as ft_range
 	int	size;
 	int	i;
 
-	if (start == end)	// if 0, skip and return 0
-		return (0);
-	if (end >= start)
+	if (end > start)
 	{
 		size = end - start;
 		ptr = (int *)malloc(sizeof(int) * size);
@@ -37,7 +35,7 @@ int	*ft_rrange(int start, int end)			// Same logic as ft_range
 		}		// no need to add teh nul because it is an INT pointer, it will stop in len
 		return (ptr);
 	}
-	else if (start >= end)
+	if (start > end)
 	{
 		size = start - end;
 		ptr = (int *)malloc(sizeof(int) * size);
@@ -53,7 +51,15 @@ int	*ft_rrange(int start, int end)			// Same logic as ft_range
 		}
 		return (ptr);
 	}
-	return (0);
+	else			// special case for 0
+	{
+		ptr = (int *)malloc(sizeof(int) * 1);
+		if (!ptr)
+			return (0);
+		ptr[0] = 0;
+		return (ptr);
+	}
+
 }
 
 int	main(void)
